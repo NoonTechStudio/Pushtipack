@@ -17,7 +17,7 @@ import img5 from '../assets/Images/img10.jpg';
 
 // Machine Images
 import Machine1 from '../assets/Images/machines/HEIDELBERG.jpg';
-import Machine2 from '../assets/Images/machines/KOMORI LITHRONE 5C Printing Machine.jpg';
+import Machine2 from '../assets/Images/machines/komori1.jpg';
 import Machine3 from '../assets/Images/machines/LITHRONE1-28.jpg';
 
 // Featured Products
