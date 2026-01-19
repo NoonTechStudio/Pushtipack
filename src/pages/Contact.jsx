@@ -121,7 +121,9 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-gray-900 mb-1">Email Address</h3>
+                    <p className="text-gray-600 font-semibold">info@pushtipack.com</p>
                     <p className="text-gray-600 font-semibold">pushti_pack@yahoo.co.in</p>
+                    
                     <p className="text-sm text-gray-500 mt-1 flex items-center"><Hash className="w-4 h-4 mr-1" /> Guaranteed response within 24 hours</p>
                   </div>
                 </div>

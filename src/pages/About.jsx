@@ -18,6 +18,7 @@ import Footer from '../components/Footer';
 
 import FactoryImage from '../assets/Images/Outside.jpg';
 import Owner1 from '../assets/Images/Mananbhai.jpeg';
+import Owner2 from '../assets/Images/Owner2.png';
 
 const About = () => {
   const stats = [
@@ -74,15 +75,15 @@ const About = () => {
   const team = [
     {
       name: "Manan Modi",
-      role: "Managing Partner",
+      role: "Managing Director",
       description: "With over 30 years in the industry, John leads with a vision for innovation and excellence.",
       image: Owner1
     },
     {
-      name: "Emma Davis",
-      role: "Technical Partner",
-      description: "Emma ensures seamless production and technological integration across all departments.",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+      name: "Manan Modi",
+      role: "Director",
+      description: "Founder of Pushtipack with over 40 years of Experience.",
+      image: Owner2
     }
   ];
 
@@ -228,8 +229,8 @@ const About = () => {
             "Their attention to detail and commitment to quality have made them our go-to partner for packaging. They don't just deliver boxes; they deliver <span className="font-bold underline">reliability</span>."
           </h2>
           <div className="mt-12">
-            <div className="font-bold text-lg">Sarah Johnson</div>
-            <div className="text-gray-500">Head of Procurement, PharmaCorp</div>
+            <div className="font-bold text-lg">Mr. Sameer</div>
+            <div className="text-gray-500">Kivi Labs</div>
           </div>
         </div>
       </section>
@@ -244,9 +245,6 @@ const About = () => {
                 <Link to="/contact" className="px-10 py-5 bg-white text-gray-900 rounded-full font-bold hover:scale-105 transition-transform">
                     Start Your Project
                 </Link>
-                <button className="px-10 py-5 border-2 border-white/30 text-white rounded-full font-bold hover:bg-white/10 transition-all">
-                    Download Portfolio
-                </button>
             </div>
           </div>
         </div>

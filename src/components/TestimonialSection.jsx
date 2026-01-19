@@ -6,28 +6,34 @@ const TestimonialsSection = () => {
 
   const testimonials = [
     {
-      name: "Sarah Johnson",
-      company: "MedTech Solutions",
+      name: "Anup Misra",
+      company: "Exemed Pharmaceuticals",
       position: "VP of Operations",
       text: "Outstanding quality and reliability. Their attention to detail in pharmaceutical packaging is unmatched. We've seen a 40% improvement in our product presentation since partnering with them.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+
     },
     {
-      name: "Michael Chen",
-      company: "FreshFood Corp",
+      name: "Viral Bhai",
+      company: "Centurion Healthcare pvt ltd ",
       position: "Packaging Director",
       text: "Excellent service and fast turnaround times. They've been our trusted partner for over 5 years. Their innovative solutions have helped us reduce packaging costs by 25%.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+
     },
     {
-      name: "Emily Rodriguez",
-      company: "Beauty Brands Ltd",
+      name: "Pankaj bhai",
+      company: "Aura lifecare",
       position: "Brand Manager",
       text: "Innovative packaging designs that perfectly capture our brand essence. Highly recommended! Their creative team understands luxury packaging like no other.",
       rating: 5,
-      avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=150&q=80"
+    },
+    {
+      name: "Kalpesh Bhai",
+      company: "Shine Pharmaceuticals",
+      position: "Brand Manager",
+      text: "Innovative packaging designs that perfectly capture our brand essence. Highly recommended! Their creative team understands luxury packaging like no other.",
+      rating: 5,
     }
   ];
 
@@ -109,11 +115,6 @@ const TestimonialsSection = () => {
 
               {/* Client Info */}
               <div className="flex items-center justify-center space-x-4">
-                <img
-                  src={testimonials[currentTestimonial].avatar}
-                  alt={testimonials[currentTestimonial].name}
-                  className="w-16 h-16 rounded-full border-4 border-gray-200 object-cover shadow-md"
-                />
                 <div className="text-center md:text-left">
                   <p className="text-gray-900 font-bold text-lg">{testimonials[currentTestimonial].name}</p>
                   <p className="text-gray-600 font-medium">{testimonials[currentTestimonial].position}</p>

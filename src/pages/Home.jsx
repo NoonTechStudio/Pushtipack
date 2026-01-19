@@ -222,8 +222,8 @@ const Home = () => {
 
           {/* Call to Action Button */}
           <div className="text-center">
-            <a
-              href="/products"
+            <Link
+              to="/products"
               className="group relative inline-flex items-center px-10 py-5 bg-gradient-to-r from-gray-900 to-gray-800 text-white rounded-full font-semibold text-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gray-900/40 hover:scale-105"
             >
               <span className="relative z-10 flex items-center">
@@ -232,7 +232,7 @@ const Home = () => {
               </span>
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
-            </a>
+            </Link>
             
             {/* Supporting text */}
             <p className="mt-6 text-gray-500 text-sm">
@@ -378,14 +378,22 @@ const Home = () => {
             Get a personalized quote for your printing and packaging needs
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="group relative px-8 py-4 bg-white text-gray-900 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white/30 hover:scale-105">
+            {/* UPDATED: Link to Contact Form */}
+            <Link 
+              to="/contact#contact-form"
+              className="group relative px-8 py-4 bg-white text-gray-900 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white/30 hover:scale-105 inline-flex items-center justify-center"
+            >
               <span className="relative z-10">Request Quote Now</span>
               <div className="absolute inset-0 bg-gray-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </button>
-            <button className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900">
+            </Link>
+            
+            {/* <Link 
+              to="/contact"
+              className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center"
+            >
               <span className="relative z-10">Schedule Consultation</span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </button>
+            </Link> */}
           </div>
         </div>
       </section>

@@ -64,6 +64,9 @@ const Header = () => {
             <a href="mailto:pushti_pack@yahoo.co.in" className="flex items-center hover:text-gray-300 transition-colors">
               <Mail className="w-3 h-3 mr-2" /> pushti_pack@yahoo.co.in
             </a>
+            <a href="mailto:pushti_pack@yahoo.co.in" className="flex items-center hover:text-gray-300 transition-colors">
+              <Mail className="w-3 h-3 mr-2" /> info@pushtipack.com
+            </a>
           </div>
           <div className="flex items-center space-x-4">
             <span className="flex items-center opacity-70"><MapPin className="w-3 h-3 mr-2" /> Vadodara, Gujarat</span>
