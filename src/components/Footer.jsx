@@ -1,41 +1,48 @@
-import React from 'react';
-import { Package, ChevronRight, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Package,
+  ChevronRight,
+  Facebook,
+  Twitter,
+  Linkedin,
+  Instagram,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const services = [
-    'Folding Cartons',
-    'Paper Labels',
-    'Leaflets & Brochures',
-    'Books & Catalogs',
-    'Promotional Materials',
-    'Custom Calendars'
+    "Folding Cartons",
+    "Paper Labels",
+    "Leaflets & Brochures",
+    "Books & Catalogs",
+    "Promotional Materials",
+    "Custom Calendars",
   ];
 
   const industries = [
-    'Pharmaceutical & OTC',
-    'Cosmetic & Skin Care',
-    'Food & Beverage',
-    'Hair Care Products',
-    'FMCG Industries',
-    'Healthcare Products'
+    "Pharmaceutical & OTC",
+    "Cosmetic & Skin Care",
+    "Food & Beverage",
+    "Hair Care Products",
+    "FMCG Industries",
+    "Healthcare Products",
   ];
 
   const capabilities = [
-    { name: 'Offset Printing', href: '/machines/offset-printing' },
-    { name: 'Lamination Services', href: '/services/lamination' },
-    { name: 'High Gloss UV Coating', href: '/services/uv-coating' },
-    { name: 'Foil Stamping', href: '/services/foil-stamping' },
-    { name: 'Die Cutting & Sorting', href: '/services/die-cutting' },
-    { name: 'Perfect Binding', href: '/services/binding' }
+    { name: "Offset Printing", href: "/machines/offset-printing" },
+    { name: "Lamination Services", href: "/services/lamination" },
+    { name: "High Gloss UV Coating", href: "/services/uv-coating" },
+    { name: "Foil Stamping", href: "/services/foil-stamping" },
+    { name: "Die Cutting & Sorting", href: "/services/die-cutting" },
+    { name: "Perfect Binding", href: "/services/binding" },
   ];
 
   const quickLinks = [
-    { name: 'About Us', href: '/about' },
-    { name: 'Our Machines', href: '/machines' },
-    { name: 'Quality Standards', href: '/quality' },
-    { name: 'Request Quote', href: '/contact' },
-    { name: 'Client Testimonials', href: '/testimonials' }
+    { name: "About Us", href: "/about" },
+    { name: "Our Machines", href: "/machines" },
+    { name: "Quality Standards", href: "/quality" },
+    { name: "Request Quote", href: "/contact" },
+    { name: "Client Testimonials", href: "/testimonials" },
   ];
 
   return (
@@ -55,32 +62,56 @@ const Footer = () => {
         <div className="border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
             <div className="grid lg:grid-cols-4 gap-12">
-
               {/* Company Info */}
               <div className="lg:col-span-1">
-                <Link to="/" className="inline-flex items-center space-x-3 mb-6 group">
+                <Link
+                  to="/"
+                  className="inline-flex items-center space-x-3 mb-6 group"
+                >
                   <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <Package className="w-7 h-7 text-gray-900" />
                   </div>
                   <div>
                     <h2 className="text-2xl font-bold">Pushti Pack</h2>
-                    <p className="text-sm text-gray-400 font-medium">Excellence Since 1995</p>
+                    <p className="text-sm text-gray-400 font-medium">
+                      Excellence Since 1995
+                    </p>
                   </div>
                 </Link>
 
                 <p className="text-gray-400 mb-8 leading-relaxed">
-                  Leading offset printing and packaging company providing personalized solutions with state-of-the-art technology and expert team since 1995.
+                  Leading offset printing and packaging company providing
+                  personalized solutions with state-of-the-art technology and
+                  expert team since 1995.
                 </p>
 
                 {/* Social Media */}
                 <div>
-                  <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase">Connect With Us</h4>
+                  <h4 className="text-sm font-semibold text-white mb-4 tracking-wide uppercase">
+                    Connect With Us
+                  </h4>
                   <div className="flex space-x-3">
                     {[
-                      { Icon: Facebook, href: 'https://facebook.com', label: 'Facebook' },
-                      { Icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },
-                      { Icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },
-                      { Icon: Instagram, href: 'https://instagram.com', label: 'Instagram' }
+                      {
+                        Icon: Facebook,
+                        href: "https://facebook.com",
+                        label: "Facebook",
+                      },
+                      {
+                        Icon: Linkedin,
+                        href: "https://linkedin.com",
+                        label: "LinkedIn",
+                      },
+                      {
+                        Icon: Twitter,
+                        href: "https://twitter.com",
+                        label: "Twitter",
+                      },
+                      {
+                        Icon: Instagram,
+                        href: "https://instagram.com",
+                        label: "Instagram",
+                      },
                     ].map((social, index) => (
                       <a
                         key={index}
@@ -105,9 +136,14 @@ const Footer = () => {
                 </h3>
                 <ul className="space-y-3">
                   {services.map((service, index) => (
-                    <li key={index} className="flex items-center text-sm text-gray-400 group">
+                    <li
+                      key={index}
+                      className="flex items-center text-sm text-gray-400 group"
+                    >
                       <div className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white group-hover:scale-125 transition-all duration-300"></div>
-                      <span className="group-hover:text-white transition-colors duration-300">{service}</span>
+                      <span className="group-hover:text-white transition-colors duration-300">
+                        {service}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -121,9 +157,14 @@ const Footer = () => {
                 </h3>
                 <ul className="space-y-3">
                   {industries.map((industry, index) => (
-                    <li key={index} className="flex items-center text-sm text-gray-400 group">
+                    <li
+                      key={index}
+                      className="flex items-center text-sm text-gray-400 group"
+                    >
                       <div className="w-1.5 h-1.5 bg-gray-600 rounded-full mr-3 group-hover:bg-white group-hover:scale-125 transition-all duration-300"></div>
-                      <span className="group-hover:text-white transition-colors duration-300">{industry}</span>
+                      <span className="group-hover:text-white transition-colors duration-300">
+                        {industry}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -157,9 +198,14 @@ const Footer = () => {
         <div className="border-b border-gray-800">
           <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
             <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-white mb-2">Our Core Capabilities</h3>
+              <h3 className="text-2xl font-bold text-white mb-2">
+                Our Core Capabilities
+              </h3>
               <div className="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-4"></div>
-              <p className="text-gray-400">Advanced printing and finishing technologies for superior results</p>
+              <p className="text-gray-400">
+                Advanced printing and finishing technologies for superior
+                results
+              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {capabilities.map((capability, index) => (
@@ -180,12 +226,14 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 gap-6">
-
             {/* Copyright */}
             <div className="text-gray-400 text-sm text-center md:text-left">
-              <p>© 2025 All rights reserved with <span className="text-white font-semibold">PushtiPack</span></p>
+              <p>
+                © 2025 All rights reserved with{" "}
+                <span className="text-white font-semibold">PushtiPack</span>
+              </p>
               <p className="mt-1">
-                Website Designed with excellence by{' '}
+                Website Designed with excellence by{" "}
                 <a
                   href="https://www.noontechstudio.com"
                   target="_blank"
@@ -199,19 +247,31 @@ const Footer = () => {
 
             {/* Footer Links */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm">
-              <Link to="/privacy" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <Link
+                to="/privacy"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
                 Privacy Policy
               </Link>
               <span className="text-gray-700">•</span>
-              <Link to="/terms" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <Link
+                to="/terms"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
                 Terms of Service
               </Link>
               <span className="text-gray-700">•</span>
-              <Link to="/quality" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <Link
+                to="/quality"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
                 Quality Standards
               </Link>
               <span className="text-gray-700">•</span>
-              <Link to="/sitemap" className="text-gray-400 hover:text-white transition-colors duration-300">
+              <Link
+                to="/sitemap"
+                className="text-gray-400 hover:text-white transition-colors duration-300"
+              >
                 Sitemap
               </Link>
             </div>

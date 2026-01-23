@@ -1,103 +1,131 @@
-import { ChevronRight, Package, Settings, Users, Award, Phone, Mail, MapPin, Star, Sparkles } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import Hero from '../components/HeroSection';
-import Testimonials from '../components/TestimonialSection';
-import Welcome from '../components/WelcomeSection';
-//import VideoShow from '../components/VideoShowcaseSection';
-
+import {
+  ChevronRight,
+  Package,
+  Settings,
+  Users,
+  Award,
+  Phone,
+  Mail,
+  MapPin,
+  Star,
+  Sparkles,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Hero from "../components/HeroSection";
+import Testimonials from "../components/TestimonialSection";
+import Welcome from "../components/WelcomeSection";
+import VideoShow from '../components/VideoShowcaseSection';
 
 // images
-import img1 from '../assets/Images/Mono.jpg';
-import img2 from '../assets/Images/Labels.jpg';
-import img3 from '../assets/Images/img12.jpg';
-import img4 from '../assets/Images/f1.avif';
-import img5 from '../assets/Images/img10.jpg';
+import img1 from "../assets/Images/Mono.jpg";
+import img2 from "../assets/Images/Labels.jpg";
+import img3 from "../assets/Images/img12.jpg";
+import img4 from "../assets/Images/f1.avif";
+import img5 from "../assets/Images/img10.jpg";
 
 // Machine Images
-import Machine1 from '../assets/Images/machines/HEIDELBERG.jpg';
-import Machine2 from '../assets/Images/machines/komori1.jpg';
-import Machine3 from '../assets/Images/machines/LITHRONE1-28.jpg';
+import Machine1 from "../assets/Images/machines/HEIDELBERG.jpg";
+import Machine2 from "../assets/Images/machines/komori1.jpg";
+import Machine3 from "../assets/Images/machines/LITHRONE1-28.jpg";
 
 // Featured Products
-import Feature1 from '../assets/Images/fp2.jpg';
-import Feature2 from '../assets/Images/fp1.jpg';
-import Feature3 from '../assets/Images/fp3.jpg';
+import Feature1 from "../assets/Images/fp2.jpg";
+import Feature2 from "../assets/Images/fp1.jpg";
+import Feature3 from "../assets/Images/fp3.jpg";
 
 const Home = () => {
   const services = [
     {
       title: "Mono Cartons",
-      description: "Premium quality folding cartons for pharmaceutical, FMCG, and food industries with precise die-cutting and finishing.",
+      description:
+        "Premium quality folding cartons for pharmaceutical, FMCG, and food industries with precise die-cutting and finishing.",
       image: img1,
     },
     {
       title: "Labels",
-      description: "High-quality paper labels with vibrant colors and durable adhesives for all your branding needs.",
+      description:
+        "High-quality paper labels with vibrant colors and durable adhesives for all your branding needs.",
       image: img2,
-
     },
     {
       title: "Leaflets",
-      description: "Eye-catching marketing materials with premium paper stock and professional finishing options.",
+      description:
+        "Eye-catching marketing materials with premium paper stock and professional finishing options.",
       image: img3,
     },
     {
       title: "Corrugated Boxes",
-      description: "Durable corrugated packaging solutions for shipping and storage with custom printing options.",
+      description:
+        "Durable corrugated packaging solutions for shipping and storage with custom printing options.",
       image: img4,
     },
     {
       title: "Promotional Products",
-      description: "Custom calendars, brochures, and catalogs with superior print quality for corporate gifting and marketing.",
+      description:
+        "Custom calendars, brochures, and catalogs with superior print quality for corporate gifting and marketing.",
       image: img5,
-    }
+    },
   ];
 
   const machines = [
     {
       name: "Heidelberg Punching Machine",
       type: "Offset Printing Press",
-      description: "High-speed 6-color offset printing with perfecting capabilities for premium quality output.",
+      description:
+        "High-speed 6-color offset printing with perfecting capabilities for premium quality output.",
       image: Machine1,
-      specs: ["Max Sheet: 74 x 106 cm", "6 Colors + Coating", "15,000 sheets/hour"]
+      specs: [
+        "Max Sheet: 74 x 106 cm",
+        "6 Colors + Coating",
+        "15,000 sheets/hour",
+      ],
     },
     {
       name: "Komori",
       type: "Advanced Offset Press",
-      description: "State-of-the-art printing technology with exceptional color consistency and registration.",
+      description:
+        "State-of-the-art printing technology with exceptional color consistency and registration.",
       image: Machine2,
-      specs: ["4-Color Process", "LED-UV Curing", "Automated Quality Control"]
+      specs: ["4-Color Process", "LED-UV Curing", "Automated Quality Control"],
     },
     {
       name: "Lithrone 28",
       type: "Die Cutting Machine",
-      description: "Precision die-cutting and creasing for folding cartons with automated waste stripping.",
+      description:
+        "Precision die-cutting and creasing for folding cartons with automated waste stripping.",
       image: Machine3,
-      specs: ["Max Sheet: 106 x 76 cm", "Automated Stripping", "High Precision Cutting"]
-    }
+      specs: [
+        "Max Sheet: 106 x 76 cm",
+        "Automated Stripping",
+        "High Precision Cutting",
+      ],
+    },
   ];
 
   const products = [
     {
       name: "Pharmaceutical Packaging",
       category: "Healthcare",
-      description: "FDA compliant packaging solutions for pharmaceutical and medical device industries.",
-      image: Feature1
+      description:
+        "FDA compliant packaging solutions for pharmaceutical and medical device industries.",
+      image: Feature1,
     },
     {
       name: "Food & Beverage Cartons",
       category: "F&B Industry",
-      description: "Food-grade packaging with barrier properties and attractive shelf appeal.",
-      image: Feature2
+      description:
+        "Food-grade packaging with barrier properties and attractive shelf appeal.",
+      image: Feature2,
     },
     {
       name: "Cosmetic Packaging",
       category: "Beauty & Personal Care",
-      description: "Premium packaging solutions that enhance product presentation and brand value.",
-      image: Feature3
-    }
+      description:
+        "Premium packaging solutions that enhance product presentation and brand value.",
+      image: Feature3,
+    },
   ];
 
   return (
@@ -112,27 +140,32 @@ const Home = () => {
       <Welcome />
 
       {/* Video Showcase  */}
-      {/* <VideoShow /> */}
-
+      <VideoShow /> 
 
       {/* Home Product section - UPDATED MODERN DESIGN */}
-      <section id="services" className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      <section
+        id="services"
+        className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden"
+      >
         {/* Decorative elements */}
         <div className="absolute top-0 left-0 w-96 h-96 bg-green-100 rounded-full filter blur-3xl opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-blue-100 rounded-full filter blur-3xl opacity-30 translate-x-1/2 translate-y-1/2"></div>
-        
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           {/* Header */}
           <div className="text-center mb-20">
             <div className="inline-flex items-center justify-center p-2 bg-green-100 rounded-full mb-6">
               <Sparkles className="w-5 h-5 text-green-600 mr-2" />
-              <span className="text-sm font-semibold text-green-700 pr-3">Our Products</span>
+              <span className="text-sm font-semibold text-green-700 pr-3">
+                Our Products
+              </span>
             </div>
             <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight">
               Our Products
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Comprehensive printing and packaging solutions tailored to your industry needs
+              Comprehensive printing and packaging solutions tailored to your
+              industry needs
             </p>
           </div>
 
@@ -154,7 +187,7 @@ const Home = () => {
                     />
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    
+
                     {/* Floating Badge */}
                     <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-900 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                       Learn More →
@@ -169,7 +202,7 @@ const Home = () => {
                     <p className="text-gray-600 leading-relaxed text-lg">
                       {service.description}
                     </p>
-                    
+
                     {/* Bottom Border Animation */}
                     <div className="mt-6 h-1 bg-gray-100 rounded-full overflow-hidden">
                       <div className="h-full bg-gradient-to-r from-green-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
@@ -193,7 +226,7 @@ const Home = () => {
                       />
                       {/* Gradient Overlay */}
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                      
+
                       {/* Floating Badge */}
                       <div className="absolute top-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-semibold text-gray-900 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-500">
                         Learn More →
@@ -208,7 +241,7 @@ const Home = () => {
                       <p className="text-gray-600 leading-relaxed text-lg">
                         {services[4].description}
                       </p>
-                      
+
                       {/* Bottom Border Animation */}
                       <div className="mt-6 h-1 bg-gray-100 rounded-full overflow-hidden">
                         <div className="h-full bg-gradient-to-r from-green-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left"></div>
@@ -233,17 +266,21 @@ const Home = () => {
               {/* Shine effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent transform -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
             </Link>
-            
+
             {/* Supporting text */}
             <p className="mt-6 text-gray-500 text-sm">
-              Discover our complete range of premium printing and packaging solutions
+              Discover our complete range of premium printing and packaging
+              solutions
             </p>
           </div>
         </div>
       </section>
 
       {/* Machines Section */}
-      <section id="machines" className="py-24 bg-white relative overflow-hidden">
+      <section
+        id="machines"
+        className="py-24 bg-white relative overflow-hidden"
+      >
         {/* Subtle Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
@@ -259,13 +296,17 @@ const Home = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-gray-900 to-transparent mx-auto mb-8"></div>
             <p className="text-xl text-gray-500 max-w-3xl mx-auto font-light">
-              Advanced printing and finishing equipment ensuring superior quality and efficiency
+              Advanced printing and finishing equipment ensuring superior
+              quality and efficiency
             </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
             {machines.map((machine, index) => (
-              <div key={index} className="group bg-white rounded-3xl border border-gray-200 hover:border-gray-900 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:-translate-y-2">
+              <div
+                key={index}
+                className="group bg-white rounded-3xl border border-gray-200 hover:border-gray-900 transition-all duration-500 overflow-hidden hover:shadow-2xl hover:-translate-y-2"
+              >
                 <div className="relative h-64 overflow-hidden">
                   <img
                     src={machine.image}
@@ -275,12 +316,21 @@ const Home = () => {
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 </div>
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">{machine.name}</h3>
-                  <p className="text-gray-500 font-semibold mb-4 uppercase text-sm tracking-wide">{machine.type}</p>
-                  <p className="text-gray-600 mb-6 leading-relaxed">{machine.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                    {machine.name}
+                  </h3>
+                  <p className="text-gray-500 font-semibold mb-4 uppercase text-sm tracking-wide">
+                    {machine.type}
+                  </p>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {machine.description}
+                  </p>
                   <div className="space-y-3">
                     {machine.specs.map((spec, i) => (
-                      <div key={i} className="text-sm text-gray-600 flex items-center">
+                      <div
+                        key={i}
+                        className="text-sm text-gray-600 flex items-center"
+                      >
                         <div className="w-2 h-2 bg-gray-900 rounded-full mr-3"></div>
                         {spec}
                       </div>
@@ -306,7 +356,10 @@ const Home = () => {
       </section>
 
       {/* Products Section - Simple Cards */}
-      <section id="products" className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden">
+      <section
+        id="products"
+        className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden"
+      >
         {/* Subtle Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
@@ -351,7 +404,9 @@ const Home = () => {
                     {product.category}
                   </div>
                   {/* Main Product Name */}
-                  <h3 className="text-xl font-bold text-gray-900 mb-0">{product.name}</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-0">
+                    {product.name}
+                  </h3>
                 </div>
               </div>
             ))}
@@ -379,14 +434,14 @@ const Home = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             {/* UPDATED: Link to Contact Form */}
-            <Link 
+            <Link
               to="/contact#contact-form"
               className="group relative px-8 py-4 bg-white text-gray-900 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white/30 hover:scale-105 inline-flex items-center justify-center"
             >
               <span className="relative z-10">Request Quote Now</span>
               <div className="absolute inset-0 bg-gray-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </Link>
-            
+
             {/* <Link 
               to="/contact"
               className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center"

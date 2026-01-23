@@ -1,13 +1,21 @@
-import React from 'react';
-import { Award, Users, Calendar, Target, ArrowRight, CheckCircle, TrendingUp, Zap } from 'lucide-react';
-import {Link} from 'react-router-dom';
-
+import React from "react";
+import {
+  Award,
+  Users,
+  Calendar,
+  Target,
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  Zap,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 const WelcomeSection = () => {
   const achievements = [
     { icon: Calendar, text: "29+ Years", subtitle: "Industry Excellence" },
     { icon: Users, text: "1000+", subtitle: "Global Clients" },
-    { icon: Target, text: "24/7", subtitle: "Dedicated Support" }
+    { icon: Target, text: "24/7", subtitle: "Dedicated Support" },
   ];
 
   const capabilities = [
@@ -15,14 +23,14 @@ const WelcomeSection = () => {
     "Skilled team of experts and gradual growth",
     "Variety of products including folding cartons and labels",
     "Personalized solutions for market requirements",
-    "Enhanced value through focused client dialogue"
+    "Enhanced value through focused client dialogue",
   ];
 
   const stats = [
     { value: "3 Lakh", label: "Daily Capacity", icon: TrendingUp },
     { value: "1000+", label: "Happy Clients", icon: Users },
     { value: "50K+", label: "Projects Done", icon: Target },
-    { value: "24/7", label: "Support", icon: Zap }
+    { value: "24/7", label: "Support", icon: Zap },
   ];
 
   return (
@@ -35,7 +43,6 @@ const WelcomeSection = () => {
       <div className="absolute bottom-20 left-10 w-96 h-96 bg-gray-900 rounded-full opacity-[0.02] blur-3xl"></div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-
         {/* Hero Section */}
         <div className="text-center mb-20">
           <div className="inline-block mb-6">
@@ -65,8 +72,12 @@ const WelcomeSection = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-gray-50 to-white opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
               <div className="relative z-10">
                 <achievement.icon className="w-10 h-10 text-gray-900 mb-4 group-hover:scale-110 transition-transform duration-500" />
-                <h4 className="text-3xl font-bold text-gray-900 mb-2">{achievement.text}</h4>
-                <p className="text-sm text-gray-500 tracking-wide uppercase">{achievement.subtitle}</p>
+                <h4 className="text-3xl font-bold text-gray-900 mb-2">
+                  {achievement.text}
+                </h4>
+                <p className="text-sm text-gray-500 tracking-wide uppercase">
+                  {achievement.subtitle}
+                </p>
               </div>
             </div>
           ))}
@@ -74,7 +85,6 @@ const WelcomeSection = () => {
 
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
-
           {/* Left: Story */}
           <div className="space-y-8">
             <div>
@@ -88,13 +98,20 @@ const WelcomeSection = () => {
 
             <div className="space-y-6 text-gray-600 text-lg leading-relaxed">
               <p>
-                Founded in 1995, Pushti Pack is a premier offset printing and packaging company dedicated to delivering tailored solutions that meet the unique needs of our clients.
+                Founded in 1995, Pushti Pack is a premier offset printing and
+                packaging company dedicated to delivering tailored solutions
+                that meet the unique needs of our clients.
               </p>
               <p>
-                We invest in state-of-the-art technology and infrastructure, continuously upgrading the skills of our expert team. Our diverse product range includes folding cartons, labels, leaflets, books, and promotional materials.
+                We invest in state-of-the-art technology and infrastructure,
+                continuously upgrading the skills of our expert team. Our
+                diverse product range includes folding cartons, labels,
+                leaflets, books, and promotional materials.
               </p>
               <p>
-                At Pushti Pack, we leverage the expertise and experience of our team to engage in meaningful dialogue with our clients, ultimately enhancing the value of their products.
+                At Pushti Pack, we leverage the expertise and experience of our
+                team to engage in meaningful dialogue with our clients,
+                ultimately enhancing the value of their products.
               </p>
             </div>
 
@@ -159,10 +176,7 @@ const WelcomeSection = () => {
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="text-center group cursor-pointer"
-                >
+                <div key={index} className="text-center group cursor-pointer">
                   <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/10 backdrop-blur-sm mb-4 group-hover:bg-white/20 transition-all duration-300 group-hover:scale-110">
                     <stat.icon className="w-8 h-8 text-white" />
                   </div>
@@ -183,15 +197,13 @@ const WelcomeSection = () => {
           <p className="text-gray-500 text-lg mb-6">
             Ready to elevate your packaging and printing experience?
           </p>
-          <Link to = '/contact'>          
-          <button className="group inline-flex items-center text-gray-900 font-semibold text-lg hover:gap-3 gap-2 transition-all duration-300">
-            Let's work together
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
-          </button>
+          <Link to="/contact">
+            <button className="group inline-flex items-center text-gray-900 font-semibold text-lg hover:gap-3 gap-2 transition-all duration-300">
+              Let's work together
+              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-300" />
+            </button>
           </Link>
-
         </div>
-
       </div>
     </section>
   );

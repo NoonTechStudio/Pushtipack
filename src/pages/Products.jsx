@@ -1,35 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { ChevronRight, Package, Award, Filter, Grid, List, Layers } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import { productCategories, categories } from '../data/Data'; // This correctly imports the data
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import {
+  ChevronRight,
+  Package,
+  Award,
+  Filter,
+  Grid,
+  List,
+  Layers,
+} from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import { productCategories, categories } from "../data/Data"; // This correctly imports the data
 
 const Products = () => {
   const location = useLocation();
-  const [selectedCategory, setSelectedCategory] = useState('all');
-  const [viewMode, setViewMode] = useState('grid');
+  const [selectedCategory, setSelectedCategory] = useState("all");
+  const [viewMode, setViewMode] = useState("grid");
 
   // Hash link scrolling from Header
   useEffect(() => {
     const hash = location.hash;
     if (hash) {
       const id = hash.substring(1); // Remove the '#'
-      
+
       setTimeout(() => {
         const element = document.getElementById(id);
         if (element) {
           const yOffset = -100; // Adjust based on header height
-          const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
-          window.scrollTo({ top: y, behavior: 'smooth' });
+          const y =
+            element.getBoundingClientRect().top + window.scrollY + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       }, 100);
     }
   }, [location.hash]);
 
-  const filteredProducts = selectedCategory === 'all'
-    ? productCategories
-    : productCategories.filter(product => product.category === selectedCategory);
+  const filteredProducts =
+    selectedCategory === "all"
+      ? productCategories
+      : productCategories.filter(
+          (product) => product.category === selectedCategory,
+        );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -59,7 +71,8 @@ const Products = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"></div>
 
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 font-light leading-relaxed">
-            Discover our comprehensive range of printing and packaging solutions, crafted with precision and designed for excellence
+            Discover our comprehensive range of printing and packaging
+            solutions, crafted with precision and designed for excellence
           </p>
 
           {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -95,8 +108,8 @@ const Products = () => {
                     onClick={() => setSelectedCategory(category.id)}
                     className={`px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap flex items-center ${
                       selectedCategory === category.id
-                        ? 'bg-gray-900 text-white shadow-lg transform scale-105'
-                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
+                        ? "bg-gray-900 text-white shadow-lg transform scale-105"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900"
                     }`}
                   >
                     <Layers className="w-4 h-4 mr-2" />
@@ -111,17 +124,21 @@ const Products = () => {
               <span className="text-sm text-gray-600 font-medium">View:</span>
               <div className="flex bg-gray-100 rounded-lg p-1">
                 <button
-                  onClick={() => setViewMode('grid')}
+                  onClick={() => setViewMode("grid")}
                   className={`p-2 rounded-md transition-all duration-300 ${
-                    viewMode === 'grid' ? 'bg-white shadow-sm ring-1 ring-gray-200' : 'hover:bg-gray-200'
+                    viewMode === "grid"
+                      ? "bg-white shadow-sm ring-1 ring-gray-200"
+                      : "hover:bg-gray-200"
                   }`}
                 >
                   <Grid className="w-4 h-4 text-gray-900" />
                 </button>
                 <button
-                  onClick={() => setViewMode('list')}
+                  onClick={() => setViewMode("list")}
                   className={`p-2 rounded-md transition-all duration-300 ${
-                    viewMode === 'list' ? 'bg-white shadow-sm ring-1 ring-gray-200' : 'hover:bg-gray-200'
+                    viewMode === "list"
+                      ? "bg-white shadow-sm ring-1 ring-gray-200"
+                      : "hover:bg-gray-200"
                   }`}
                 >
                   <List className="w-4 h-4 text-gray-900" />
@@ -142,7 +159,7 @@ const Products = () => {
               <div
                 id={product.id} // This uses the product ID (e.g., 'folding-cartons') for the anchor
                 key={product.id}
-                className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 items-center`}
+                className={`flex flex-col ${index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"} gap-12 items-center`}
               >
                 {/* Image Cube Grid */}
                 <div className="lg:w-1/2">
@@ -167,7 +184,9 @@ const Products = () => {
                         ))}
                       </div>
                     </div>
-                    <div className={`absolute -z-10 top-8 ${index % 2 === 0 ? 'left-8' : 'right-8'} w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl opacity-20`}></div>
+                    <div
+                      className={`absolute -z-10 top-8 ${index % 2 === 0 ? "left-8" : "right-8"} w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl opacity-20`}
+                    ></div>
                   </div>
                 </div>
 
@@ -177,12 +196,13 @@ const Products = () => {
                     <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium mb-4">
                       <Award className="w-4 h-4 mr-2" />
                       {/* Displays the category name from Data.js (e.g., 'packaging', 'labels') */}
-                      {product.category.charAt(0).toUpperCase() + product.category.slice(1)} 
+                      {product.category.charAt(0).toUpperCase() +
+                        product.category.slice(1)}
                     </div>
 
                     <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                       {/* Displays the product name from Data.js (e.g., 'Folding Cartons') */}
-                      {product.name} 
+                      {product.name}
                     </h2>
 
                     <p className="text-xl text-gray-600 leading-relaxed mb-8">
@@ -192,10 +212,15 @@ const Products = () => {
 
                   {/* Features Grid */}
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Features</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                      Key Features
+                    </h3>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {product.features.map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-center group">
+                        <div
+                          key={featureIndex}
+                          className="flex items-center group"
+                        >
                           <div className="w-3 h-3 bg-gray-900 rounded-full mr-4 group-hover:scale-125 transition-transform duration-300"></div>
                           <span className="text-gray-700 font-medium group-hover:text-gray-900 transition-colors duration-300">
                             {feature}
@@ -207,7 +232,9 @@ const Products = () => {
 
                   {/* Applications */}
                   <div>
-                    <h3 className="text-2xl font-bold text-gray-900 mb-6">Applications</h3>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-6">
+                      Applications
+                    </h3>
                     <div className="flex flex-wrap gap-3">
                       {product.applications.map((app, appIndex) => (
                         <span
@@ -259,7 +286,8 @@ const Products = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-gray-300 mb-10 font-light leading-relaxed">
-            Get a personalized quote for your printing and packaging needs. Our experts are ready to help you create something extraordinary.
+            Get a personalized quote for your printing and packaging needs. Our
+            experts are ready to help you create something extraordinary.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -1,13 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { ChevronRight, ChevronLeft, Play, Package, Tag, FileText, Box, ArrowRight } from 'lucide-react';
-import {Link} from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import {
+  ChevronRight,
+  ChevronLeft,
+  Play,
+  Package,
+  Tag,
+  FileText,
+  Box,
+  ArrowRight,
+} from "lucide-react";
+import { Link } from "react-router-dom";
 
 // Import your images - make sure these paths are correct
-import herobackground from '../assets/Images/newHeroBG.png';
-import hero1 from '../assets/Images/MonoCarton.png';
-import hero2 from '../assets/Images/Rolls.webp';
-import hero3 from '../assets/Images/Leaflet-1.jpg';
-import hero4 from '../assets/Images/CorruBox.avif';
+import herobackground from "../assets/Images/newHeroBG.png";
+import hero1 from "../assets/Images/MonoCarton.png";
+import hero2 from "../assets/Images/Rolls.webp";
+import hero3 from "../assets/Images/Leaflet-1.jpg";
+import hero4 from "../assets/Images/CorruBox.avif";
 
 // Using placeholder images for demo
 const herobg = herobackground;
@@ -23,52 +32,61 @@ const HeroSection = () => {
   const slides = [
     {
       id: 1,
-      type: 'welcome',
+      type: "welcome",
       title: "Packaging Excellence",
       subtitle: "Since 1995",
-      description: "Your trusted partner in premium printing and packaging solutions. We combine state-of-the-art technology with unmatched quality to elevate your brand.",
+      description:
+        "Your trusted partner in premium printing and packaging solutions. We combine state-of-the-art technology with unmatched quality to elevate your brand.",
       backgroundImage: herobg,
     },
     {
       id: 2,
-      type: 'product',
+      type: "product",
       title: "Mono Cartons",
       subtitle: "Premium Finish & Texture",
-      description: "High-quality mono cartons with superior printing and custom structural designs that ensure your product stands out on the shelf.",
+      description:
+        "High-quality mono cartons with superior printing and custom structural designs that ensure your product stands out on the shelf.",
       productImage: heroImg1,
       accent: "border-blue-500",
-      features: ["Custom Structuring", "UV & Foil Effects", "Fast Turnaround"]
+      features: ["Custom Structuring", "UV & Foil Effects", "Fast Turnaround"],
     },
     {
       id: 3,
-      type: 'product',
+      type: "product",
       title: "Labels",
       subtitle: "High Precision Identification",
-      description: "Professional labels featuring vibrant color reproduction and durable materials suitable for various environmental conditions.",
+      description:
+        "Professional labels featuring vibrant color reproduction and durable materials suitable for various environmental conditions.",
       productImage: heroImg2,
       accent: "border-purple-500",
-      features: ["Weather Resistant", "Roll & Sheet Form", "Vibrant Colors"]
+      features: ["Weather Resistant", "Roll & Sheet Form", "Vibrant Colors"],
     },
     {
       id: 4,
-      type: 'product',
+      type: "product",
       title: "Leaflets",
       subtitle: "Marketing Collateral",
-      description: "Crisp, clear, and impactful leaflets. We use premium paper stock and high-resolution offset printing for maximum clarity.",
+      description:
+        "Crisp, clear, and impactful leaflets. We use premium paper stock and high-resolution offset printing for maximum clarity.",
       productImage: heroImg3,
       accent: "border-teal-500",
-      features: ["Premium GSM Paper", "Fold Customization", "Offset Quality"]
+      features: ["Premium GSM Paper", "Fold Customization", "Offset Quality"],
     },
     {
       id: 5,
-      type: 'product',
+      type: "product",
       title: "Corrugated Boxes",
       subtitle: "Logistics & Protection",
-      description: "Engineered for strength. Our corrugated solutions offer the perfect balance of protection and brand visibility for shipping.",
+      description:
+        "Engineered for strength. Our corrugated solutions offer the perfect balance of protection and brand visibility for shipping.",
       productImage: heroImg4,
       accent: "border-orange-500",
-      features: ["High Burst Factor", "Custom Dimensions", "Sustainable Material"]
-    }
+      features: [
+        "High Burst Factor",
+        "Custom Dimensions",
+        "Sustainable Material",
+      ],
+    },
   ];
 
   useEffect(() => {
@@ -82,7 +100,8 @@ const HeroSection = () => {
   }, [isPaused, slides.length]);
 
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
-  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  const prevSlide = () =>
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   const goToSlide = (index) => setCurrentSlide(index);
 
   // --- WELCOME SLIDE ---
@@ -106,17 +125,17 @@ const HeroSection = () => {
               <span className="w-2 h-2 rounded-full bg-orange-500 mr-2"></span>
               {slide.subtitle}
             </div>
-            
+
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 tracking-tight leading-tight">
               {slide.title}
             </h1>
-            
+
             <p className="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl font-light">
               {slide.description}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-5">
-              <Link to ='/products'>
+              <Link to="/products">
                 <button className="group bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-lg text-lg font-medium transition-all duration-300 flex items-center justify-center">
                   Explore Products
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -137,24 +156,30 @@ const HeroSection = () => {
   const ProductSlide = ({ slide }) => (
     <div className="relative w-full h-full bg-slate-900">
       {/* Background Texture */}
-      <div className="absolute inset-0 opacity-20" 
-           style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)', backgroundSize: '40px 40px' }}>
-      </div>
+      <div
+        className="absolute inset-0 opacity-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(circle at 2px 2px, rgba(255,255,255,0.15) 1px, transparent 0)",
+          backgroundSize: "40px 40px",
+        }}
+      ></div>
 
       <div className="relative z-10 h-full flex items-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full h-full flex flex-col md:flex-row items-center gap-12 py-12 md:py-0">
-          
           {/* Left: Content */}
           <div className="w-full md:w-5/12 order-2 md:order-1 flex flex-col justify-center">
-            <div className={`h-1 w-20 mb-6 bg-gradient-to-r from-orange-500 to-transparent`}></div>
-            
+            <div
+              className={`h-1 w-20 mb-6 bg-gradient-to-r from-orange-500 to-transparent`}
+            ></div>
+
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-3 tracking-tight">
               {slide.title}
             </h2>
             <h3 className="text-xl text-orange-400 mb-6 font-medium">
               {slide.subtitle}
             </h3>
-            
+
             <p className="text-slate-400 text-lg mb-8 leading-relaxed">
               {slide.description}
             </p>
@@ -168,7 +193,7 @@ const HeroSection = () => {
                 </div>
               ))}
             </div>
-{/* 
+            {/* 
             <button className="self-start text-white border-b border-orange-500 pb-1 hover:text-orange-400 transition-colors uppercase tracking-widest text-sm font-semibold">
               View Specifications
             </button> */}
@@ -178,18 +203,17 @@ const HeroSection = () => {
           <div className="w-full md:w-7/12 order-1 md:order-2 h-[50vh] md:h-full flex items-center justify-center relative">
             {/* Glassmorphic Backing Card */}
             <div className="absolute inset-4 bg-white/5 rounded-3xl border border-white/10 backdrop-blur-sm -z-10 transform rotate-1"></div>
-            
+
             {/* Main Image Container */}
             <div className="relative w-full h-full max-h-[75vh] p-8 flex items-center justify-center">
               <img
                 src={slide.productImage}
                 alt={slide.title}
                 className="w-full h-full object-contain drop-shadow-2xl filter brightness-110"
-                style={{ maxHeight: '100%' }}
+                style={{ maxHeight: "100%" }}
               />
             </div>
           </div>
-          
         </div>
       </div>
     </div>
@@ -207,10 +231,10 @@ const HeroSection = () => {
         <div
           key={slide.id}
           className={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out ${
-            index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+            index === currentSlide ? "opacity-100 z-10" : "opacity-0 z-0"
           }`}
         >
-          {slide.type === 'welcome' ? (
+          {slide.type === "welcome" ? (
             <WelcomeSlide slide={slide} />
           ) : (
             <ProductSlide slide={slide} />
@@ -221,7 +245,7 @@ const HeroSection = () => {
       {/* Navigation - Bottom Right Corner */}
       <div className="absolute bottom-0 right-0 z-30 bg-slate-900/80 backdrop-blur-md p-6 rounded-tl-3xl border-t border-l border-white/10 hidden md:flex flex-col gap-4">
         <div className="flex items-center space-x-6">
-           {/* Custom Pagination */}
+          {/* Custom Pagination */}
           <div className="text-white font-mono text-sm">
             <span className="text-orange-500">0{currentSlide + 1}</span>
             <span className="text-slate-500 mx-2">/</span>
@@ -243,13 +267,13 @@ const HeroSection = () => {
             </button>
           </div>
         </div>
-        
+
         {/* Progress Bar */}
         <div className="w-full h-1 bg-white/10 rounded-full overflow-hidden mt-2">
-           <div 
-             className="h-full bg-orange-500 transition-all duration-300"
-             style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
-           ></div>
+          <div
+            className="h-full bg-orange-500 transition-all duration-300"
+            style={{ width: `${((currentSlide + 1) / slides.length) * 100}%` }}
+          ></div>
         </div>
       </div>
 
@@ -260,7 +284,7 @@ const HeroSection = () => {
             key={index}
             onClick={() => goToSlide(index)}
             className={`w-2 h-2 rounded-full transition-all duration-300 ${
-              index === currentSlide ? 'bg-orange-500 w-6' : 'bg-white/40'
+              index === currentSlide ? "bg-orange-500 w-6" : "bg-white/40"
             }`}
           />
         ))}
@@ -273,7 +297,6 @@ const HeroSection = () => {
         <div className="flex-1 bg-yellow-400 opacity-80"></div>
         <div className="flex-1 bg-black opacity-80"></div>
       </div>
-
     </section>
   );
 };

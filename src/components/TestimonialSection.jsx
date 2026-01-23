@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Star, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -11,7 +11,6 @@ const TestimonialsSection = () => {
       position: "VP of Operations",
       text: "Outstanding quality and reliability. Their attention to detail in pharmaceutical packaging is unmatched. We've seen a 40% improvement in our product presentation since partnering with them.",
       rating: 5,
-
     },
     {
       name: "Viral Bhai",
@@ -19,7 +18,6 @@ const TestimonialsSection = () => {
       position: "Packaging Director",
       text: "Excellent service and fast turnaround times. They've been our trusted partner for over 5 years. Their innovative solutions have helped us reduce packaging costs by 25%.",
       rating: 5,
-
     },
     {
       name: "Pankaj bhai",
@@ -34,7 +32,7 @@ const TestimonialsSection = () => {
       position: "Brand Manager",
       text: "Innovative packaging designs that perfectly capture our brand essence. Highly recommended! Their creative team understands luxury packaging like no other.",
       rating: 5,
-    }
+    },
   ];
 
   const clientLogos = [
@@ -43,12 +41,12 @@ const TestimonialsSection = () => {
     { name: "MediPharma" },
     { name: "FoodMax" },
     { name: "BeautyPlus" },
-    { name: "PackPro" }
+    { name: "PackPro" },
   ];
 
   useEffect(() => {
     const testimonialTimer = setInterval(() => {
-      setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
     }, 6000);
     return () => clearInterval(testimonialTimer);
   }, []);
@@ -58,7 +56,9 @@ const TestimonialsSection = () => {
   };
 
   const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setCurrentTestimonial(
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
+    );
   };
 
   return (
@@ -87,7 +87,8 @@ const TestimonialsSection = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-transparent via-white to-transparent mx-auto mb-8"></div>
             <p className="text-xl text-gray-400 max-w-2xl mx-auto font-light">
-              Discover why leading companies trust us with their printing and packaging needs
+              Discover why leading companies trust us with their printing and
+              packaging needs
             </p>
           </div>
 
@@ -103,9 +104,14 @@ const TestimonialsSection = () => {
 
               {/* Rating Stars */}
               <div className="flex justify-center mb-8">
-                {[...Array(testimonials[currentTestimonial].rating)].map((_, i) => (
-                  <Star key={i} className="w-6 h-6 text-gray-900 fill-current mx-0.5" />
-                ))}
+                {[...Array(testimonials[currentTestimonial].rating)].map(
+                  (_, i) => (
+                    <Star
+                      key={i}
+                      className="w-6 h-6 text-gray-900 fill-current mx-0.5"
+                    />
+                  ),
+                )}
               </div>
 
               {/* Testimonial Text */}
@@ -116,9 +122,15 @@ const TestimonialsSection = () => {
               {/* Client Info */}
               <div className="flex items-center justify-center space-x-4">
                 <div className="text-center md:text-left">
-                  <p className="text-gray-900 font-bold text-lg">{testimonials[currentTestimonial].name}</p>
-                  <p className="text-gray-600 font-medium">{testimonials[currentTestimonial].position}</p>
-                  <p className="text-gray-500 text-sm">{testimonials[currentTestimonial].company}</p>
+                  <p className="text-gray-900 font-bold text-lg">
+                    {testimonials[currentTestimonial].name}
+                  </p>
+                  <p className="text-gray-600 font-medium">
+                    {testimonials[currentTestimonial].position}
+                  </p>
+                  <p className="text-gray-500 text-sm">
+                    {testimonials[currentTestimonial].company}
+                  </p>
                 </div>
               </div>
             </div>
@@ -143,10 +155,11 @@ const TestimonialsSection = () => {
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`transition-all duration-300 rounded-full ${index === currentTestimonial
-                    ? 'w-10 h-3 bg-white'
-                    : 'w-3 h-3 bg-white/40 hover:bg-white/60'
-                    }`}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentTestimonial
+                      ? "w-10 h-3 bg-white"
+                      : "w-3 h-3 bg-white/40 hover:bg-white/60"
+                  }`}
                 />
               ))}
             </div>

@@ -1,44 +1,58 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, useLocation, Link } from 'react-router-dom';
-import { ChevronRight, Settings, Package, Zap, Clock, Shield, Award, ArrowLeft, Layers, Ruler, ArrowLeftCircle, ArrowRightCircle, Package as PackageIcon, Filter } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-
+import React, { useState, useEffect } from "react";
+import { useParams, useLocation, Link } from "react-router-dom";
+import {
+  ChevronRight,
+  Settings,
+  Package,
+  Zap,
+  Clock,
+  Shield,
+  Award,
+  ArrowLeft,
+  Layers,
+  Ruler,
+  ArrowLeftCircle,
+  ArrowRightCircle,
+  Package as PackageIcon,
+  Filter,
+} from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 // Machine images
-import img1 from '../assets/Images/machines/HEIDELBERG Punching Machine - Packaging.jpg';
-import img2 from '../assets/Images/machines/HEIDELBERG.jpg';
-import img3 from '../assets/Images/machines/MAXIMA Punching Machine-Packaging.jpg';
-import img4 from '../assets/Images/machines/LockBottom Pasting Machine-Packaging.jpg';
-import img5 from '../assets/Images/machines/LockBottom-Pasting - 2.jpg';
-import img6 from '../assets/Images/machines/SUKANT Lamination Machine-Packaging.jpg';
+import img1 from "../assets/Images/machines/HEIDELBERG Punching Machine - Packaging.jpg";
+import img2 from "../assets/Images/machines/HEIDELBERG.jpg";
+import img3 from "../assets/Images/machines/MAXIMA Punching Machine-Packaging.jpg";
+import img4 from "../assets/Images/machines/LockBottom Pasting Machine-Packaging.jpg";
+import img5 from "../assets/Images/machines/LockBottom-Pasting - 2.jpg";
+import img6 from "../assets/Images/machines/SUKANT Lamination Machine-Packaging.jpg";
 
-import img7 from '../assets/Images/machines/komori1.jpg';
-import img8 from '../assets/Images/machines/komori2.jpg';
+import img7 from "../assets/Images/machines/komori1.jpg";
+import img8 from "../assets/Images/machines/komori2.jpg";
 
 // Machine Images (you'll need to import your actual images)
-import PackagingMachine1 from '../assets/Images/PM1.jpg';
-import PackagingMachine2 from '../assets/Images/PM2.jpg';
-import PackagingMachine3 from '../assets/Images/PM3.jpg';
-import PackagingMachine4 from '../assets/Images/PM4.jpg';
-import PrintingMachine1 from '../assets/Images/PM5.png';
-import PrintingMachine2 from '../assets/Images/PM6.png';
-import PrintingMachine3 from '../assets/Images/PM7.jpg';
-import PrintingMachine4 from '../assets/Images/PM8.jpg';
+import PackagingMachine1 from "../assets/Images/PM1.jpg";
+import PackagingMachine2 from "../assets/Images/PM2.jpg";
+import PackagingMachine3 from "../assets/Images/PM3.jpg";
+import PackagingMachine4 from "../assets/Images/PM4.jpg";
+import PrintingMachine1 from "../assets/Images/PM5.png";
+import PrintingMachine2 from "../assets/Images/PM6.png";
+import PrintingMachine3 from "../assets/Images/PM7.jpg";
+import PrintingMachine4 from "../assets/Images/PM8.jpg";
 
 const Machines = () => {
   const { category } = useParams();
   const location = useLocation();
-  const [activeTab, setActiveTab] = useState('all');
+  const [activeTab, setActiveTab] = useState("all");
 
   useEffect(() => {
     // Determine initial active tab based on URL path
-    if (location.pathname.includes('/machines/packaging-machines')) {
-      setActiveTab('packaging');
-    } else if (location.pathname.includes('/machines/printing-machines')) {
-      setActiveTab('printing');
+    if (location.pathname.includes("/machines/packaging-machines")) {
+      setActiveTab("packaging");
+    } else if (location.pathname.includes("/machines/printing-machines")) {
+      setActiveTab("printing");
     } else {
-      setActiveTab('all');
+      setActiveTab("all");
     }
   }, [location.pathname]);
 
@@ -49,14 +63,15 @@ const Machines = () => {
       name: "HEIDELBERG Punching Machine",
       model: "KSBA-4658",
       images: [img1, img2],
-      description: "High-precision cylinder die-cutting and punching machine for packaging applications with exceptional register accuracy. Designed for pharmaceutical, cosmetics, and food packaging industries, this machine delivers consistent quality in cutting, creasing, and embossing operations.",
+      description:
+        "High-precision cylinder die-cutting and punching machine for packaging applications with exceptional register accuracy. Designed for pharmaceutical, cosmetics, and food packaging industries, this machine delivers consistent quality in cutting, creasing, and embossing operations.",
       specifications: [
         "Max Sheet Size: 46 x 58.5 cm",
         "Production Speed: 5,000 sheets/hour",
         "Punching Force: 40-60 tons",
         "Min Sheet Size: 14 x 18 cm",
         "Power Consumption: 5 KW",
-        "Weight: 3,030 kg"
+        "Weight: 3,030 kg",
       ],
       features: [
         "Precision Cylinder Die-Cutting Technology",
@@ -64,24 +79,25 @@ const Machines = () => {
         "Robust Steel Frame Construction",
         "Quick Tool Changeover System",
         "Central Lubrication System",
-        "Safety Clutch & Emergency Stop"
+        "Safety Clutch & Emergency Stop",
       ],
       industries: ["Pharmaceutical Packaging", "Cosmetics", "Food Packaging"],
-      category: 'packaging'
+      category: "packaging",
     },
     {
       id: 2,
       name: "MAXIMA Punching Machine",
       model: "EXB-35/HS-1020",
       images: [img3],
-      description: "Advanced flatbed automatic die-cutting machine with PLC control and Siemens automation. Features high-speed operation, accurate feeding, and triple-action stripping system. Ideal for pharmaceutical, food, and cosmetics packaging with excellent versatility for both small and large production runs.",
+      description:
+        "Advanced flatbed automatic die-cutting machine with PLC control and Siemens automation. Features high-speed operation, accurate feeding, and triple-action stripping system. Ideal for pharmaceutical, food, and cosmetics packaging with excellent versatility for both small and large production runs.",
       specifications: [
         "Max Cutting Size: 615 x 895 mm",
         "Production Speed: 5,500-7,500 sheets/hour",
         "Punching Accuracy: ±0.1mm",
         "Power Consumption: 7.5 KW",
         "Material Thickness: 0.2-5mm",
-        "Dimensions: 3.9m x 3.2m x 1.8m"
+        "Dimensions: 3.9m x 3.2m x 1.8m",
       ],
       features: [
         "Siemens PLC Control with Touch Screen HMI",
@@ -89,24 +105,25 @@ const Machines = () => {
         "Automatic Centralized Lubrication System",
         "Double Sheet Detector for Quality Control",
         "Pneumatic Chase Locking System",
-        "Variable Frequency Drive (VFD) Motor Control"
+        "Variable Frequency Drive (VFD) Motor Control",
       ],
       industries: ["Pharmaceutical", "Food & Beverage", "Cosmetics"],
-      category: 'packaging'
+      category: "packaging",
     },
     {
       id: 3,
       name: "Lock Bottom Pasting Machine",
       model: "LB-1100/AS-900",
       images: [img4, img5],
-      description: "High-speed automatic folder gluer designed for crash lock bottom and straight-line carton production. Features pre-folding capability and multiple gluing stations for pharmaceutical, cosmetic, and specialty packaging applications. Offers exceptional production efficiency with quick setup times.",
+      description:
+        "High-speed automatic folder gluer designed for crash lock bottom and straight-line carton production. Features pre-folding capability and multiple gluing stations for pharmaceutical, cosmetic, and specialty packaging applications. Offers exceptional production efficiency with quick setup times.",
       specifications: [
         "Max Sheet Size: 900 x 1,700 mm",
         "Production Speed: 100-200 m/min",
         "Min Sheet Size: 300 x 600 mm",
         "Feed Conveyor Speed: 30 m/min",
         "Power Consumption: 10.5 KW",
-        "Overall Dimensions: 11.5m x 3m"
+        "Overall Dimensions: 11.5m x 3m",
       ],
       features: [
         "Pre-Folding for 180° and 135° Creases",
@@ -114,24 +131,25 @@ const Machines = () => {
         "Multiple Gluing Stations (Side & Bottom)",
         "PLC Program Control with Servo Motors",
         "Quick Job Changeover (<5 minutes)",
-        "Automatic Counting & Stacking System"
+        "Automatic Counting & Stacking System",
       ],
       industries: ["Pharmaceutical", "Cosmetics", "Specialty Packaging"],
-      category: 'packaging'
+      category: "packaging",
     },
     {
       id: 4,
       name: "SUKANT Lamination Machine",
       model: "TFL-1200/SLM-Pro",
       images: [img6],
-      description: "Professional thermal film lamination system for packaging applications. Designed for laminating printed paper, boards, and flexible materials with precision temperature control. Suitable for enhancing product appearance and providing protective coating for various packaging materials.",
+      description:
+        "Professional thermal film lamination system for packaging applications. Designed for laminating printed paper, boards, and flexible materials with precision temperature control. Suitable for enhancing product appearance and providing protective coating for various packaging materials.",
       specifications: [
         "Max Lamination Width: 1,200 mm",
         "Lamination Speed: 0-50 m/min",
         "Temperature Range: 40-180°C",
         "Film Thickness: 12-100 microns",
         "Power Consumption: 15 KW",
-        "Roller Diameter: 150-200 mm"
+        "Roller Diameter: 150-200 mm",
       ],
       features: [
         "Precision Temperature Control System",
@@ -139,11 +157,11 @@ const Machines = () => {
         "Suitable for Thermal & Cold Lamination",
         "Multiple Material Compatibility (Paper/Board/Film)",
         "Automatic Film Tension Control",
-        "Emergency Stop & Safety Features"
+        "Emergency Stop & Safety Features",
       ],
       industries: ["Printing & Packaging", "Labels", "Flexible Packaging"],
-      category: 'packaging'
-    }
+      category: "packaging",
+    },
   ];
 
   const printingMachines = [
@@ -152,14 +170,15 @@ const Machines = () => {
       name: "Komori Lithrone 28",
       model: "L-528/L-428",
       images: [img7, img8],
-      description: "Premium offset printing press in the 28-inch format range, offering exceptional print quality and reliability. Features advanced Komorimatic dampening system, PQC print quality control, and SAPC semi-automatic plate changing. Ideal for commercial printing, packaging, and high-quality production work.",
+      description:
+        "Premium offset printing press in the 28-inch format range, offering exceptional print quality and reliability. Features advanced Komorimatic dampening system, PQC print quality control, and SAPC semi-automatic plate changing. Ideal for commercial printing, packaging, and high-quality production work.",
       specifications: [
         "Max Sheet Size: 52 x 72.8 cm (20.5 x 28.7 in)",
         "Colors: 4-6 Colors + Coating",
         "Production Speed: 10,000-15,000 sheets/hour",
         "Registration Accuracy: ±0.02mm",
         "Min Sheet Size: 36 x 52 cm",
-        "Power Consumption: 25 KW"
+        "Power Consumption: 25 KW",
       ],
       features: [
         "Komorimatic Dampening System",
@@ -167,26 +186,41 @@ const Machines = () => {
         "PQC Print Quality Control Console",
         "Chrome Plated Cylinders for Durability",
         "Automatic Blanket & Roller Washing",
-        "Powder Spray System for Fast Drying"
+        "Powder Spray System for Fast Drying",
       ],
       industries: ["Commercial Printing", "Packaging", "Label Printing"],
-      category: 'printing'
-    }
+      category: "printing",
+    },
   ];
 
   const allMachines = [...packagingMachines, ...printingMachines];
 
   const machineCategories = [
-    { id: 'all', name: 'All Machines', count: allMachines.length, icon: Layers },
-    { id: 'packaging', name: 'Packaging', count: packagingMachines.length, icon: PackageIcon },
-    { id: 'printing', name: 'Printing', count: printingMachines.length, icon: Settings },
+    {
+      id: "all",
+      name: "All Machines",
+      count: allMachines.length,
+      icon: Layers,
+    },
+    {
+      id: "packaging",
+      name: "Packaging",
+      count: packagingMachines.length,
+      icon: PackageIcon,
+    },
+    {
+      id: "printing",
+      name: "Printing",
+      count: printingMachines.length,
+      icon: Settings,
+    },
   ];
 
   const getCurrentMachines = () => {
     switch (activeTab) {
-      case 'packaging':
+      case "packaging":
         return packagingMachines;
-      case 'printing':
+      case "printing":
         return printingMachines;
       default:
         return allMachines;
@@ -195,23 +229,23 @@ const Machines = () => {
 
   const getPageTitle = () => {
     switch (activeTab) {
-      case 'packaging':
-        return 'Precision Packaging Machinery';
-      case 'printing':
-        return 'State-of-the-Art Printing Presses';
+      case "packaging":
+        return "Precision Packaging Machinery";
+      case "printing":
+        return "State-of-the-Art Printing Presses";
       default:
-        return 'Machine Portfolio';
+        return "Machine Portfolio";
     }
   };
 
   const getPageDescription = () => {
     switch (activeTab) {
-      case 'packaging':
-        return 'Explore high-speed, reliable solutions for all your packaging needs, from punching to lamination.';
-      case 'printing':
-        return 'Discover world-class offset printing presses delivering unmatched quality and efficiency.';
+      case "packaging":
+        return "Explore high-speed, reliable solutions for all your packaging needs, from punching to lamination.";
+      case "printing":
+        return "Discover world-class offset printing presses delivering unmatched quality and efficiency.";
       default:
-        return 'A curated selection of our best-in-class industrial printing and packaging automation solutions.';
+        return "A curated selection of our best-in-class industrial printing and packaging automation solutions.";
     }
   };
 
@@ -220,14 +254,15 @@ const Machines = () => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
     const nextImage = () => {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex + 1) % machine.images.length
+      setCurrentImageIndex(
+        (prevIndex) => (prevIndex + 1) % machine.images.length,
       );
     };
 
     const prevImage = () => {
-      setCurrentImageIndex((prevIndex) =>
-        (prevIndex - 1 + machine.images.length) % machine.images.length
+      setCurrentImageIndex(
+        (prevIndex) =>
+          (prevIndex - 1 + machine.images.length) % machine.images.length,
       );
     };
 
@@ -235,14 +270,13 @@ const Machines = () => {
 
     return (
       <div
-        className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 items-center`}
+        className={`flex flex-col ${isReversed ? "lg:flex-row-reverse" : "lg:flex-row"} gap-12 items-center`}
       >
         {/* Image Carousel (Matching Products.jsx Image Cube Grid concept) */}
         <div className="lg:w-1/2">
           <div className="relative">
             {/* Main container with elevation and hover effect */}
             <div className="relative bg-white rounded-3xl shadow-2xl overflow-hidden transform hover:scale-[1.02] transition-all duration-700 hover:shadow-3xl border border-gray-200">
-
               {/* Carousel container */}
               <div className="relative aspect-video">
                 <img
@@ -277,7 +311,9 @@ const Machines = () => {
             </div>
 
             {/* Decorative Elements */}
-            <div className={`absolute -z-10 top-8 ${isReversed ? 'right-8' : 'left-8'} w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl opacity-20`}></div>
+            <div
+              className={`absolute -z-10 top-8 ${isReversed ? "right-8" : "left-8"} w-full h-full bg-gradient-to-br from-gray-200 to-gray-300 rounded-3xl opacity-20`}
+            ></div>
           </div>
         </div>
 
@@ -287,7 +323,9 @@ const Machines = () => {
             {/* Category Badge */}
             <div className="inline-flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium mb-4">
               <Award className="w-4 h-4 mr-2" />
-              {machine.category.charAt(0).toUpperCase() + machine.category.slice(1)} Machine
+              {machine.category.charAt(0).toUpperCase() +
+                machine.category.slice(1)}{" "}
+              Machine
             </div>
 
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2 leading-tight">
@@ -305,7 +343,9 @@ const Machines = () => {
 
           {/* Features Grid */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Key Technical Features</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Key Technical Features
+            </h3>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {machine.features.slice(0, 4).map((feature, featureIndex) => (
                 <div key={featureIndex} className="flex items-center group">
@@ -320,7 +360,9 @@ const Machines = () => {
 
           {/* Specifications */}
           <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Industries & Specs</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              Industries & Specs
+            </h3>
             <div className="flex flex-wrap gap-3 mb-6">
               {machine.industries.map((industry, appIndex) => (
                 <span
@@ -341,7 +383,8 @@ const Machines = () => {
               ))}
               {machine.specifications.length > 3 && (
                 <li className="text-xs italic text-gray-500 pt-1">
-                  ...and {machine.specifications.length - 3} more detailed specifications.
+                  ...and {machine.specifications.length - 3} more detailed
+                  specifications.
                 </li>
               )}
             </ul>
@@ -351,7 +394,6 @@ const Machines = () => {
     );
   };
   // --- END MachineDetailCard Component Redesigned ---
-
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -393,10 +435,11 @@ const Machines = () => {
                   <button
                     key={category.id}
                     onClick={() => setActiveTab(category.id)}
-                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap flex items-center ${activeTab === category.id
-                      ? 'bg-gray-900 text-white shadow-lg transform scale-105'
-                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
-                      }`}
+                    className={`px-4 py-2 rounded-full font-medium transition-all duration-300 whitespace-nowrap flex items-center ${
+                      activeTab === category.id
+                        ? "bg-gray-900 text-white shadow-lg transform scale-105"
+                        : "bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900"
+                    }`}
                   >
                     <category.icon className="w-4 h-4 mr-2" />
                     {category.name} ({category.count})
@@ -428,16 +471,21 @@ const Machines = () => {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="mb-16">
             <h2 className="text-4xl font-extrabold text-gray-900 mb-2 text-center">
-              {machineCategories.find(c => c.id === activeTab)?.name}
+              {machineCategories.find((c) => c.id === activeTab)?.name}
             </h2>
             <p className="text-lg text-gray-500 text-center">
-              Displaying {getCurrentMachines().length} high-performance machines.
+              Displaying {getCurrentMachines().length} high-performance
+              machines.
             </p>
           </div>
 
           <div className="space-y-20">
             {getCurrentMachines().map((machine, index) => (
-              <MachineDetailCard key={machine.id} machine={machine} index={index} />
+              <MachineDetailCard
+                key={machine.id}
+                machine={machine}
+                index={index}
+              />
             ))}
           </div>
         </div>
@@ -447,9 +495,12 @@ const Machines = () => {
       <section className="py-20 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-extrabold text-gray-900 mb-4">The Advantage of Choosing Us</h2>
+            <h2 className="text-4xl font-extrabold text-gray-900 mb-4">
+              The Advantage of Choosing Us
+            </h2>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              We combine world-class engineering with dedicated service to maximize your uptime and output.
+              We combine world-class engineering with dedicated service to
+              maximize your uptime and output.
             </p>
           </div>
 
@@ -458,30 +509,41 @@ const Machines = () => {
               {
                 icon: Award,
                 title: "Premium Engineering",
-                description: "Built with the highest precision standards for unmatched reliability and longevity."
+                description:
+                  "Built with the highest precision standards for unmatched reliability and longevity.",
               },
               {
                 icon: Zap,
                 title: "Peak Efficiency",
-                description: "Optimized energy consumption and high-speed operation for maximum productivity."
+                description:
+                  "Optimized energy consumption and high-speed operation for maximum productivity.",
               },
               {
                 icon: Shield,
                 title: "Comprehensive Service",
-                description: "24/7 technical support and a global service network for peace of mind."
+                description:
+                  "24/7 technical support and a global service network for peace of mind.",
               },
               {
                 icon: Settings,
                 title: "Intuitive Control",
-                description: "Advanced, user-friendly control systems with included training programs."
-              }
+                description:
+                  "Advanced, user-friendly control systems with included training programs.",
+              },
             ].map((feature, index) => (
-              <div key={index} className="text-center p-8 rounded-2xl bg-gray-100/70 hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <div
+                key={index}
+                className="text-center p-8 rounded-2xl bg-gray-100/70 hover:bg-gray-200 transition-all duration-300 shadow-lg hover:shadow-xl"
+              >
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-gray-900 rounded-full mb-5 shadow-lg">
                   <feature.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
-                <p className="text-sm text-gray-600 leading-relaxed">{feature.description}</p>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {feature.description}
+                </p>
               </div>
             ))}
           </div>
@@ -501,7 +563,8 @@ const Machines = () => {
             Ready to Scale Your Production?
           </h2>
           <p className="text-xl text-gray-300 mb-10 font-light leading-relaxed">
-            Get a personalized consultation to find the perfect machine that meets your capacity and quality demands.
+            Get a personalized consultation to find the perfect machine that
+            meets your capacity and quality demands.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
@@ -514,9 +577,7 @@ const Machines = () => {
               </span>
               <div className="absolute inset-0 bg-gray-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </Link>
-            <button
-              className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center"
-            >
+            <button className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center">
               <span className="relative z-10">Download Catalog</span>
               <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </button>

@@ -1,30 +1,124 @@
-import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Clock, Send, Hash, ChevronRight } from 'lucide-react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React, { useState } from "react";
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Send,
+  Hash,
+  ChevronRight,
+} from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import emailjs from "@emailjs/browser";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    company: '',
-    message: '',
-    service: 'general'
+    name: "",
+    email: "",
+    phone: "",
+    company: "",
+    message: "",
+    service: "general",
   });
+
+  const EMAILJS_CONFIG = {
+    serviceId: "service_fel6lwf",
+    templateId: "template_8no82oq",
+    publicKey: "V4zUe4642AY-CozGQ",
+  };
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState({ type: "", message: "" });
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add API call here
+    setIsSubmitting(true);
+    setSubmitStatus({ type: "", message: "" });
+
+    // Map service value to label
+    const getServiceLabel = (value) => {
+      const services = {
+        general: "General Inquiry",
+        "folding-cartons": "Folding Cartons",
+        "paper-labels": "Paper Labels",
+        "leaflets-brochures": "Leaflets & Brochures",
+        "books-catalogs": "Books & Catalogs",
+        calendars: "Calendars",
+        "custom-packaging": "Custom Packaging",
+      };
+      return services[value] || "General Inquiry";
+    };
+
+    const templateParams = {
+      customer_name: formData.name,
+      customer_email: formData.email,
+      customer_phone: formData.phone,
+      customer_company: formData.company,
+      service_type: getServiceLabel(formData.service),
+      customer_message: formData.message,
+      current_date: new Date().toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        dateStyle: "full",
+        timeStyle: "short",
+      }),
+      // Add these new parameters
+      website_url: "https://pushtipack.com",
+      ip_address: "Website Form Submission",
+      user_agent: "Pushti Pack Contact Form",
+      // Add physical address (required by CAN-SPAM)
+      company_address:
+        "76P8+VHC, Gajrawadi Tank Rd, Gajarawadi, Hiraba Nagar, Suryanagar, Vadodara, Gujarat 390004",
+      unsubscribe_link: "https://pushtipack.com/contact",
+    };
+
+    try {
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.serviceId,
+        EMAILJS_CONFIG.templateId,
+        templateParams,
+        EMAILJS_CONFIG.publicKey,
+      );
+
+      console.log("Email sent successfully:", response);
+
+      setSubmitStatus({
+        type: "success",
+        message:
+          "✅ Thank you! Your message has been sent successfully. We'll respond within 24 hours.",
+      });
+
+      // Reset form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
+        service: "general",
+      });
+
+      // Auto-hide success message after 10 seconds
+      setTimeout(() => {
+        setSubmitStatus({ type: "", message: "" });
+      }, 10000);
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setSubmitStatus({
+        type: "error",
+        message:
+          "❌ Sorry, there was an error sending your message. Please try again or contact us directly at info@pushtipack.com.",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -43,13 +137,6 @@ const Contact = () => {
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 lg:px-8 text-center">
-
-          {/* Badge/Pill (Matches Products.jsx Style) */}
-          {/* <div className="inline-flex items-center px-6 py-2 bg-white/10 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6 border border-white/20">
-            <Mail className="w-4 h-4 mr-2" />
-            Connect With Experts
-          </div> */}
-
           {/* Title (Matches Products.jsx Style) */}
           <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight">
             Get In Touch
@@ -60,45 +147,30 @@ const Contact = () => {
 
           {/* Description */}
           <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto mb-12 font-light leading-relaxed">
-            We are ready to discuss your project, provide technical support, or answer any questions you have about our products and machines.
+            We are ready to discuss your project, provide technical support, or
+            answer any questions you have about our products and machines.
           </p>
-
-          {/* CTA Buttons (Matches Products.jsx Two-Button Style) */}
-          {/* <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="#contact-form"
-              className="group relative px-8 py-4 bg-white text-gray-900 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-white/30 hover:scale-105 inline-flex items-center justify-center"
-            >
-              <span className="relative z-10 flex items-center">
-                Start Project Inquiry
-                <Send className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
-              </span>
-              <div className="absolute inset-0 bg-gray-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </a>
-            <a
-              href="tel:+919427611985"
-              className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center"
-            >
-              <span className="relative z-10">Call Us Directly</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </a>
-          </div> */}
         </div>
       </section>
 
       {/* Contact Information & Form Section (Matches Products.jsx Main Section Theme) */}
-      <section className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden" id="contact-form">
+      <section
+        className="py-24 bg-gradient-to-b from-white via-gray-50 to-white relative overflow-hidden"
+        id="contact-form"
+      >
         {/* Subtle Grid Background (Matches Products.jsx) */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
         <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-
             {/* Contact Information */}
             <div>
-              <h2 className="text-4xl font-extrabold text-gray-900 mb-8">Direct Contact Information</h2>
+              <h2 className="text-4xl font-extrabold text-gray-900 mb-8">
+                Direct Contact Information
+              </h2>
               <p className="text-xl text-gray-600 mb-12 leading-relaxed">
-                Reach out to us directly through phone or email. Our team is dedicated to providing swift and effective communication.
+                Reach out to us directly through phone or email. Our team is
+                dedicated to providing swift and effective communication.
               </p>
 
               <div className="space-y-6">
@@ -108,9 +180,16 @@ const Contact = () => {
                     <Phone className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">Phone Support</h3>
-                    <p className="text-gray-600 font-semibold">+91 9427611985</p>
-                    <p className="text-sm text-gray-500 mt-1 flex items-center"><Clock className="w-4 h-4 mr-1" /> Mon-Sat 9:00 AM - 6:00 PM (IST)</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      Phone Support
+                    </h3>
+                    <p className="text-gray-600 font-semibold">
+                      +91 9427611985
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1 flex items-center">
+                      <Clock className="w-4 h-4 mr-1" /> Mon-Sat 9:00 AM - 6:00
+                      PM (IST)
+                    </p>
                   </div>
                 </div>
 
@@ -120,11 +199,20 @@ const Contact = () => {
                     <Mail className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">Email Address</h3>
-                    <p className="text-gray-600 font-semibold">info@pushtipack.com</p>
-                    <p className="text-gray-600 font-semibold">pushti_pack@yahoo.co.in</p>
-                    
-                    <p className="text-sm text-gray-500 mt-1 flex items-center"><Hash className="w-4 h-4 mr-1" /> Guaranteed response within 24 hours</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      Email Address
+                    </h3>
+                    <p className="text-gray-600 font-semibold">
+                      info@pushtipack.com
+                    </p>
+                    <p className="text-gray-600 font-semibold">
+                      pushti_pack@yahoo.co.in
+                    </p>
+
+                    <p className="text-sm text-gray-500 mt-1 flex items-center">
+                      <Hash className="w-4 h-4 mr-1" /> Guaranteed response
+                      within 24 hours
+                    </p>
                   </div>
                 </div>
 
@@ -134,17 +222,41 @@ const Contact = () => {
                     <MapPin className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">Our Location</h3>
-                    <p className="text-gray-600 font-semibold">Vadodara, Gujarat, India</p>
-                    <p className="text-sm text-gray-500 mt-1">Global reach with local expertise</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-1">
+                      Our Location
+                    </h3>
+                    <p className="text-gray-600 font-semibold">
+                      Vadodara, Gujarat, India
+                    </p>
+                    <p className="text-sm text-gray-500 mt-1">
+                      Global reach with local expertise
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
-            <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-gray-100 transform translate-y-[-2rem] lg:translate-y-0"> {/* Slight lift for visual emphasis */}
-              <h3 className="text-3xl font-extrabold text-gray-900 mb-8">Send us a Message</h3>
+            <div className="bg-white rounded-3xl shadow-2xl p-8 lg:p-10 border border-gray-100 transform translate-y-[-2rem] lg:translate-y-0">
+              <h3 className="text-3xl font-extrabold text-gray-900 mb-8">
+                Send us a Message
+              </h3>
+
+              {/* Status Messages */}
+              {submitStatus.message && (
+                <div
+                  className={`mb-6 p-4 rounded-xl ${
+                    submitStatus.type === "success"
+                      ? "bg-green-50 text-green-800 border border-green-200"
+                      : "bg-red-50 text-red-800 border border-red-200"
+                  }`}
+                >
+                  <div className="font-semibold mb-1">
+                    {submitStatus.type === "success" ? "Success!" : "Error"}
+                  </div>
+                  <p>{submitStatus.message}</p>
+                </div>
+              )}
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -222,7 +334,9 @@ const Contact = () => {
                     <option value="general">General Inquiry</option>
                     <option value="folding-cartons">Folding Cartons</option>
                     <option value="paper-labels">Paper Labels</option>
-                    <option value="leaflets-brochures">Leaflets & Brochures</option>
+                    <option value="leaflets-brochures">
+                      Leaflets & Brochures
+                    </option>
                     <option value="books-catalogs">Books & Catalogs</option>
                     <option value="calendars">Calendars</option>
                     <option value="custom-packaging">Custom Packaging</option>
@@ -244,17 +358,54 @@ const Contact = () => {
                   />
                 </div>
 
-                {/* Submit Button (Matches Products.jsx Primary Button Style) */}
+                {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full group relative bg-gray-900 text-white py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-gray-900/30 hover:scale-[1.01] flex items-center justify-center"
+                  disabled={isSubmitting}
+                  className={`w-full group relative ${isSubmitting ? "bg-gray-600" : "bg-gray-900"} text-white py-4 rounded-full font-semibold overflow-hidden transition-all duration-300 ${!isSubmitting && "hover:shadow-2xl hover:shadow-gray-900/30 hover:scale-[1.01]"} flex items-center justify-center disabled:cursor-not-allowed`}
                 >
                   <span className="relative z-10 flex items-center">
-                    Send Message
-                    <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                    {isSubmitting ? (
+                      <>
+                        <svg
+                          className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                        >
+                          <circle
+                            className="opacity-25"
+                            cx="12"
+                            cy="12"
+                            r="10"
+                            stroke="currentColor"
+                            strokeWidth="4"
+                          ></circle>
+                          <path
+                            className="opacity-75"
+                            fill="currentColor"
+                            d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                          ></path>
+                        </svg>
+                        Sending...
+                      </>
+                    ) : (
+                      <>
+                        Send Message
+                        <ChevronRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300" />
+                      </>
+                    )}
                   </span>
-                  <div className="absolute inset-0 bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  {!isSubmitting && (
+                    <div className="absolute inset-0 bg-gray-800 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+                  )}
                 </button>
+
+                {/* Privacy Note */}
+                <p className="text-sm text-gray-500 text-center pt-4 border-t border-gray-100">
+                  We respect your privacy. Your information is secure and will
+                  only be used to respond to your inquiry.
+                </p>
               </form>
             </div>
           </div>
@@ -274,7 +425,8 @@ const Contact = () => {
             Ready to Start Your Project?
           </h2>
           <p className="text-xl text-gray-300 mb-10 font-light leading-relaxed">
-            Get a personalized quote for your printing and packaging needs. Our experts are ready to help you create something extraordinary.
+            Get a personalized quote for your printing and packaging needs. Our
+            experts are ready to help you create something extraordinary.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -287,13 +439,6 @@ const Contact = () => {
               </span>
               <div className="absolute inset-0 bg-gray-100 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </a>
-            {/* <a
-              href="tel:+919427611985"
-              className="group relative px-8 py-4 bg-transparent text-white rounded-full font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center"
-            >
-              <span className="relative z-10">Schedule Consultation</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
-            </a> */}
           </div>
         </div>
       </section>
