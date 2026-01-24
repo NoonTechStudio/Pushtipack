@@ -85,7 +85,7 @@ const About = () => {
       image: Owner1,
     },
     {
-      name: "Manan Modi",
+      name: "Suresh Modi",
       role: "Director",
       description: "Founder of Pushtipack with over 40 years of Experience.",
       image: Owner2,

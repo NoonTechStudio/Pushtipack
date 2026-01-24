@@ -13,10 +13,10 @@ import { Link } from "react-router-dom";
 
 // Import your images - make sure these paths are correct
 import herobackground from "../assets/Images/newHeroBG.png";
-import hero1 from "../assets/Images/MonoCarton.png";
-import hero2 from "../assets/Images/Rolls.webp";
+import hero1 from "../assets/Images/Mono.jpg";
+import hero2 from "../assets/Images/label1.png";
 import hero3 from "../assets/Images/Leaflet-1.jpg";
-import hero4 from "../assets/Images/CorruBox.avif";
+import hero4 from "../assets/Images/f1.avif";
 
 // Using placeholder images for demo
 const herobg = herobackground;

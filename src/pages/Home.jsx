@@ -17,6 +17,7 @@ import Hero from "../components/HeroSection";
 import Testimonials from "../components/TestimonialSection";
 import Welcome from "../components/WelcomeSection";
 import VideoShow from '../components/VideoShowcaseSection';
+import Facilities from '../components/Facilities';
 
 // images
 import img1 from "../assets/Images/Mono.jpg";
@@ -378,6 +379,9 @@ const Home = () => {
               Discover our premium product range across various industries
             </p>
           </div>
+
+          {/* Facilities */}
+          <Facilities />
 
           {/* Card Grid with simplified content */}
           <div className="grid md:grid-cols-3 gap-6 mb-12">

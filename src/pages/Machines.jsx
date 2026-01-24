@@ -29,16 +29,9 @@ import img6 from "../assets/Images/machines/SUKANT Lamination Machine-Packaging.
 
 import img7 from "../assets/Images/machines/komori1.jpg";
 import img8 from "../assets/Images/machines/komori2.jpg";
-
-// Machine Images (you'll need to import your actual images)
-import PackagingMachine1 from "../assets/Images/PM1.jpg";
-import PackagingMachine2 from "../assets/Images/PM2.jpg";
-import PackagingMachine3 from "../assets/Images/PM3.jpg";
-import PackagingMachine4 from "../assets/Images/PM4.jpg";
-import PrintingMachine1 from "../assets/Images/PM5.png";
-import PrintingMachine2 from "../assets/Images/PM6.png";
-import PrintingMachine3 from "../assets/Images/PM7.jpg";
-import PrintingMachine4 from "../assets/Images/PM8.jpg";
+import img9 from '../assets/Images/machines/KOMORI.jpg';
+import img10 from '../assets/Images/machines/KOMORI-Printing.jpg';
+import img11 from '../assets/Images/machines/KOMORI SPRINT-2.jpg';
 
 const Machines = () => {
   const { category } = useParams();
@@ -166,32 +159,85 @@ const Machines = () => {
 
   const printingMachines = [
     {
-      id: 5,
-      name: "Komori Lithrone 28",
-      model: "L-528/L-428",
-      images: [img7, img8],
-      description:
-        "Premium offset printing press in the 28-inch format range, offering exceptional print quality and reliability. Features advanced Komorimatic dampening system, PQC print quality control, and SAPC semi-automatic plate changing. Ideal for commercial printing, packaging, and high-quality production work.",
-      specifications: [
-        "Max Sheet Size: 52 x 72.8 cm (20.5 x 28.7 in)",
-        "Colors: 4-6 Colors + Coating",
-        "Production Speed: 10,000-15,000 sheets/hour",
-        "Registration Accuracy: ±0.02mm",
-        "Min Sheet Size: 36 x 52 cm",
-        "Power Consumption: 25 KW",
-      ],
-      features: [
-        "Komorimatic Dampening System",
-        "SAPC Semi-Automatic Plate Change",
-        "PQC Print Quality Control Console",
-        "Chrome Plated Cylinders for Durability",
-        "Automatic Blanket & Roller Washing",
-        "Powder Spray System for Fast Drying",
-      ],
-      industries: ["Commercial Printing", "Packaging", "Label Printing"],
-      category: "printing",
+        id: 5,
+        name: "Komori Lithrone 28",
+        model: "L-228 | 2 Colors",
+        images: [img10, img9],
+        description:
+            "Efficient 2-color offset printing press in the 28-inch format range, perfect for businesses focusing on duo-tone printing requirements. This compact yet powerful machine delivers exceptional print quality with the renowned Komorimatic dampening system and PQC print quality control. Ideal for producing letterheads, business forms, newsletters, and cost-effective commercial printing jobs that don't require full-color output. The L-228 offers excellent registration accuracy and consistent performance for high-volume monochrome and two-color production.",
+        specifications: [
+            "Max Sheet Size: 52 x 72.8 cm (20.5 x 28.7 in)",
+            "Colors: 2 Colors",
+            "Production Speed: 10,000-15,000 sheets/hour",
+            "Registration Accuracy: ±0.02mm",
+            "Min Sheet Size: 36 x 52 cm",
+            "Power Consumption: 20 KW",
+        ],
+        features: [
+            "Komorimatic Dampening System",
+            "SAPC Semi-Automatic Plate Change",
+            "PQC Print Quality Control Console",
+            "Chrome Plated Cylinders for Durability",
+            "Automatic Blanket & Roller Washing",
+            "Powder Spray System for Fast Drying",
+        ],
+        industries: ["Commercial Printing", "Packaging", "Label Printing"],
+        category: "printing",
     },
-  ];
+    {
+        id: 6,
+        name: "Komori Lithrone 28",
+        model: "L-528 | 5 Colors",
+        images: [img7, img8],
+        description:
+            "Versatile 5-color offset printing press in the 28-inch format range, designed for premium full-color production with extended capabilities. This advanced machine combines CMYK process colors with an additional unit for spot colors, varnish, or special finishes, providing creative flexibility for demanding projects. Perfect for high-end brochures, catalogs, marketing materials, and packaging that require vibrant colors and special effects. The L-528 features cutting-edge automation including SAPC semi-automatic plate changing and the precision Komorimatic dampening system, ensuring consistent color reproduction and superior print quality throughout long production runs.",
+        specifications: [
+            "Max Sheet Size: 52 x 72.8 cm (20.5 x 28.7 in)",
+            "Colors: 5 Colors",
+            "Production Speed: 10,000-15,000 sheets/hour",
+            "Registration Accuracy: ±0.02mm",
+            "Min Sheet Size: 36 x 52 cm",
+            "Power Consumption: 28 KW",
+        ],
+        features: [
+            "Komorimatic Dampening System",
+            "SAPC Semi-Automatic Plate Change",
+            "PQC Print Quality Control Console",
+            "Chrome Plated Cylinders for Durability",
+            "Automatic Blanket & Roller Washing",
+            "Powder Spray System for Fast Drying",
+        ],
+        industries: ["Commercial Printing", "Packaging", "Label Printing"],
+        category: "printing",
+    },
+    {
+        id: 7,
+        name: "Komori Lithrone 28",
+        model: "L-628+C | 6 Colors",
+        images: [img11, img8],
+        description:
+            "Premium 6-color offset printing press with inline coating unit in the 28-inch format range, representing the pinnacle of commercial printing technology. This top-of-the-line machine offers complete CMYK process printing plus two additional color units for spot colors, metallic inks, or varnish, combined with a dedicated inline coating unit for aqueous or UV coating applications. Ideal for luxury packaging, high-end commercial printing, premium marketing materials, and specialty applications requiring exceptional visual impact and protective finishes. The L-628+C delivers unmatched versatility with its ability to print, enhance with special colors, and apply protective or decorative coatings in a single pass, maximizing efficiency while producing stunning results. Advanced features including PQC console and automatic washing systems ensure consistent world-class quality.",
+        specifications: [
+            "Max Sheet Size: 52 x 72.8 cm (20.5 x 28.7 in)",
+            "Colors: 6 Colors + Coating",
+            "Production Speed: 10,000-15,000 sheets/hour",
+            "Registration Accuracy: ±0.02mm",
+            "Min Sheet Size: 36 x 52 cm",
+            "Power Consumption: 32 KW",
+        ],
+        features: [
+            "Komorimatic Dampening System",
+            "SAPC Semi-Automatic Plate Change",
+            "PQC Print Quality Control Console",
+            "Chrome Plated Cylinders for Durability",
+            "Automatic Blanket & Roller Washing",
+            "Powder Spray System for Fast Drying",
+            "Inline Coating Unit for Enhanced Finish",
+        ],
+        industries: ["Commercial Printing", "Packaging", "Label Printing"],
+        category: "printing",
+    },
+];
 
   const allMachines = [...packagingMachines, ...printingMachines];
 
@@ -336,7 +382,7 @@ const Machines = () => {
               Model: {machine.model}
             </p>
 
-            <p className="text-xl text-gray-600 leading-relaxed">
+            <p className="text-xl text-gray-600 text-justify leading-relaxed">
               {machine.description}
             </p>
           </div>

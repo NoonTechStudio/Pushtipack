@@ -177,6 +177,18 @@ const Products = () => {
                               className="w-full h-full object-cover transition-all duration-500 group-hover:scale-110"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-gray-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+                            
+                            {/* Image Label Overlay */}
+                            {product.imageLabels && product.imageLabels[imgIndex] && (
+                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
+                                <div className="bg-gray-900/90 backdrop-blur-sm px-4 py-2 rounded-lg">
+                                  <p className="text-white text-sm font-semibold text-center">
+                                    {product.imageLabels[imgIndex]}
+                                  </p>
+                                </div>
+                              </div>
+                            )}
+                            
                             <div className="absolute top-3 right-3 w-8 h-8 bg-gray-900/90 rounded-full flex items-center justify-center text-sm font-bold text-white opacity-0 group-hover:opacity-100 transition-all duration-300">
                               {imgIndex + 1}
                             </div>
@@ -205,7 +217,7 @@ const Products = () => {
                       {product.name}
                     </h2>
 
-                    <p className="text-xl text-gray-600 leading-relaxed mb-8">
+                    <p className="text-xl text-gray-600 text-justify leading-relaxed mb-8">
                       {product.description}
                     </p>
                   </div>
@@ -305,7 +317,7 @@ const Products = () => {
               className="group relative px-8 py-4 bg-transparent text-white rounded-full text-lg font-semibold border-2 border-white overflow-hidden transition-all duration-300 hover:text-gray-900 inline-flex items-center justify-center"
             >
               <span className="relative z-10">Schedule Consultation</span>
-              <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
+              <div className="absolute inset-0 bg-white transform scale-x-0 xgroup-hover:scale-x-100 transition-transform duration-500 origin-left"></div>
             </Link>
           </div>
         </div>

@@ -7,14 +7,15 @@ import img5 from "../assets/Images/Labels.jpg";
 import img6 from "../assets/Images/pl2.jpg";
 import img7 from "../assets/Images/label1.png";
 import img8 from "../assets/Images/label2.png";
-import img9 from "../assets/Images/img10.jpg";
-import img10 from "../assets/Images/img11.jpg";
-import img11 from "../assets/Images/Leaflet.jpg";
+import img9 from "../assets/Images/Leaf1.webp";
+import img10 from "../assets/Images/Leaf2.webp";
+import img11 from "../assets/Images/Leaf3.jpg";
 import img12 from "../assets/Images/img12.jpg";
-import img17 from "../assets/Images/c4.jpg";
+// promotional products
+import img17 from "../assets/Images/Leaflet-1.jpg";
 import img18 from "../assets/Images/l2.jpg";
 import img19 from "../assets/Images/l3.webp";
-import img20 from "../assets/Images/l4.png";
+import img20 from "../assets/Images/Leaflet.jpg";
 import img21 from "../assets/Images/corru1.webp";
 import img22 from "../assets/Images/corru2.jpg";
 import img23 from "../assets/Images/corru3.png";
@@ -26,64 +27,83 @@ export const productData = {
     id: "mono-cartons",
     name: "Mono Cartons (Folding Cartons)",
     description:
-      "High-precision, single-piece folding cartons ideal for pharmaceutical, cosmetics, and food packaging. Our cartons feature intricate die-cutting and high-end finishes like metallic foiling and UV spot coating for a premium shelf appeal.",
+      "High-precision, single-piece folding cartons ideal for pharmaceutical, cosmetics, and food packaging. Our cartons feature intricate die-cutting and high-end finishes like metallic foiling and UV spot coating for premium shelf appeal. We specialize in multiple carton types including Drip Off Cartons (selective matte-gloss effects), Metpet Cartons (metallic lamination), Cold Foil Cartons (brilliant metallic accents), Embossed Cartons (dimensional patterns), and Extra Flap Cartons (enhanced security features).",
     images: [img1, img2, img3, img4],
+    imageLabels: ["Metpet Mono Carton", "Drip Off Mono Carton", "Cold Foil Mono Carton", "Embossed Mono Carton"],
     features: [
       "FDA Compliant Stock",
-      "Customizable Structures (e.g., lock-bottom)",
-      "Premium Finishing Options",
+      "Drip Off, Metpet & Cold Foil Finishing",
+      "Precision Embossing & Debossing",
+      "Extra Flap Security Options",
+      "Customizable Structures (lock-bottom, tuck-end)",
+      "Premium Metallic & UV Spot Coating",
       "High-Speed Automated Production",
     ],
     applications: [
       "Pharmaceutical Blister Packs",
-      "Cosmetic Products",
-      "Small Electronics",
-      "Gourmet Food Items",
+      "Luxury Cosmetic Products",
+      "Premium Electronics Packaging",
+      "Gourmet Food & Confectionery",
+      "Healthcare & Wellness Products",
     ],
     category: "packaging",
     specifications: [
       "Material: Virgin paperboard 250-450 GSM",
       "Printing: Up to 7 colors offset printing",
-      "Finishing: Spot UV, metallic foiling, and blind embossing",
-      "Closure: Tuck-end, auto-bottom, reverse tuck",
+      "Finishing: Drip Off, Metpet, Cold Foil, Embossing, Spot UV",
+      "Closure: Tuck-end, auto-bottom, reverse tuck, extra flap",
+      "Carton Types: Drip Off, Metpet, Cold Foil, Embossed, Extra Flap",
     ],
     benefits: [
-      "Exceptional structural integrity and protection",
-      "Maximizes brand visibility with luxurious print quality",
-      "Suitable for tamper-evident requirements",
-      "Designed for efficient filling and sealing on production lines",
+      "Exceptional structural integrity and product protection",
+      "Multiple premium finishing options for unique brand differentiation",
+      "Suitable for tamper-evident and security requirements",
+      "Maximizes shelf presence with luxurious tactile and visual effects",
+      "Designed for efficient filling and sealing on automated production lines",
+      "Compliant with stringent pharmaceutical and food safety standards",
     ],
   },
   labels: {
     id: "labels",
     name: "Labels (Self-Adhesive & Roll Form)",
     description:
-      "Durable, high-quality self-adhesive labels available in roll or sheet form. We offer a variety of paper and filmic substrates with strong, weather-resistant adhesives, perfect for product branding and regulatory compliance.",
+      "Durable, high-quality self-adhesive labels available in roll or sheet form. We offer a variety of paper and filmic substrates with strong, weather-resistant adhesives, perfect for product branding and regulatory compliance. Our label range includes Sticker Labels (roll form with strong adhesives for automated application), Paper Labels (eco-friendly chromo and specialty papers), and Sheet Form Paper Labels (ideal for manual application and small batch production).",
     images: [img5, img6, img7, img8],
+    imageLabels: ["Sticker Label", "Paper Label", "Sheet Form Label", "Roll Form Label"],
     features: [
       "Water & Oil Resistant Materials",
+      "Sticker Labels (Roll Form)",
+      "Premium Paper Labels",
+      "Sheet Form Paper Labels",
       "Flexographic and Digital Printing",
-      "Variable Data & Barcoding",
-      "Custom Die-Cut Shapes",
+      "Variable Data & Barcode Integration",
+      "Custom Die-Cut Shapes & Sizes",
+      "Eco-Friendly Sustainable Options",
     ],
     applications: [
-      "Bottle & Jar Labeling",
-      "Industrial Drum Labels",
-      "Logistics/Shipping Labels",
-      "Product Authentication Seals",
+      "Bottle & Jar Labeling (Beverages, Cosmetics)",
+      "Industrial Drum & Container Labels",
+      "Logistics & Shipping Labels",
+      "Product Authentication & Security Seals",
+      "Artisanal & Craft Product Labels",
+      "Retail Price & Information Labels",
     ],
     category: "labels",
     specifications: [
       "Material: Chromo paper, PVC, PP, or specialty film",
-      "Adhesive: Permanent, deep-freeze, or peelable",
+      "Adhesive: Permanent, deep-freeze, removable, or peelable",
       "Printing: Up to 8 colors Flexo and Digital",
-      "Finishing: Matte/Gloss varnish or lamination",
+      "Finishing: Matte/Gloss varnish, lamination, or spot UV",
+      "Format: Roll form (sticker labels) or sheet form (paper labels)",
     ],
     benefits: [
-      "Ensure regulatory compliance with crisp text",
-      "Maintain brand integrity through harsh environments",
-      "Cost-effective for bulk and high-speed application",
-      "Fast delivery on customized label runs",
+      "Ensure regulatory compliance with crisp, legible text and barcodes",
+      "Maintain brand integrity through harsh environmental conditions",
+      "Versatile material options for any product or application",
+      "Cost-effective solutions for both bulk and small-batch production",
+      "Fast turnaround on customized label designs and specifications",
+      "High-speed application compatibility for automated production lines",
+      "Sustainable paper options for environmentally conscious brands",
     ],
   },
   leaflets: {
@@ -92,6 +112,7 @@ export const productData = {
     description:
       "Precisely folded, detailed leaflets and package inserts, critical for pharmaceuticals and consumer goods where clear, comprehensive information is required. Available in ultra-thin and miniature fold formats.",
     images: [img9, img10, img11, img12],
+    imageLabels: ["Pharma Leaflet", "Instruction Manual", "Product Leaflet", "Folded Leaflet"],
     features: [
       "Miniature and Perforated Folds",
       "High-Clarity Text Reproduction",
@@ -122,8 +143,9 @@ export const productData = {
     id: "corrugated-boxes",
     name: "Corrugated Boxes (E-commerce & Shipping)",
     description:
-      "Robust, multi-ply corrugated cardboard boxes built for shipping, storage, and heavy-duty product protection. Custom-engineered for stacking strength and cushioning during transit.",
+       "Robust, multi-ply corrugated cardboard boxes built for shipping, storage, and heavy-duty product protection. Custom-engineered for stacking strength and cushioning during transit. We specialize in various corrugated box types including E-Flute Cartons (thin, lightweight for retail packaging), Universal Boxes (versatile all-purpose shipping boxes), and NF Cartons (non-fluted corrugated for specialized applications).",
     images: [img21, img22, img23, img24],
+    imageLabels: ["E-commerce Box", "Shipping Box", "Display Box", "Heavy Duty Box"],
     features: [
       "High Bursting Strength (BF)",
       "Custom Flute Types (E, B, C, EB)",
@@ -156,6 +178,7 @@ export const productData = {
     description:
       "Bespoke marketing and point-of-sale materials, including calendars, danglers, posters, and shelf talkers, designed to capture customer attention and drive sales in retail environments.",
     images: [img17, img18, img19, img20],
+    imageLabels: ["Corporate Calendar", "Dangler Display", "Promotional Poster", "POS Signage"],
     features: [
       "Vibrant UV Printing",
       "Durable Card Stock",
