@@ -1,13 +1,13 @@
 // Import all product images
 import img1 from "../assets/Images/Mono.jpg";
 import img2 from "../assets/Images/img1.jpg";
-import img3 from "../assets/Images/img2.jpg";
+import img3 from "../assets/Images/img9.jpg";
 import img4 from "../assets/Images/img3.jpg";
 import img5 from "../assets/Images/Labels.jpg";
 import img6 from "../assets/Images/pl2.jpg";
 import img7 from "../assets/Images/label1.png";
 import img8 from "../assets/Images/label2.png";
-import img9 from "../assets/Images/Leaf1.webp";
+import img9 from "../assets/Images/Leaflet-11.jpg";
 import img10 from "../assets/Images/Leaf2.webp";
 import img11 from "../assets/Images/Leaf3.jpg";
 import img12 from "../assets/Images/img12.jpg";
