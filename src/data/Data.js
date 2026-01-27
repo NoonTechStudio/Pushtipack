@@ -177,8 +177,8 @@ export const productData = {
     name: "Promotional Material & Display Graphics",
     description:
       "Bespoke marketing and point-of-sale materials, including calendars, danglers, posters, and shelf talkers, designed to capture customer attention and drive sales in retail environments.",
-    images: [img17, img18, img19, img20],
-    imageLabels: ["Corporate Calendar", "Dangler Display", "Promotional Poster", "POS Signage"],
+    images: [img18, img17, img19, img20],
+    imageLabels: ["Corporate Brochure", "Brochure", "Promotional Poster", "POS Signage"],
     features: [
       "Vibrant UV Printing",
       "Durable Card Stock",
