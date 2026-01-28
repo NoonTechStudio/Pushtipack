@@ -193,26 +193,80 @@ const Contact = () => {
                   </div>
                 </div>
 
-                {/* Contact Block 2 - Email */}
-                <div className="flex items-start group p-6 rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
-                  <div className="bg-gray-900 p-3 rounded-xl mr-6 group-hover:bg-gray-800 transition-colors duration-300">
-                    <Mail className="w-6 h-6 text-white" />
+                {/* Contact Block 2 - Email (Redesigned with Categories) */}
+                <div className="group p-6 rounded-3xl bg-white shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+                  <div className="flex items-start mb-4">
+                    <div className="bg-gray-900 p-3 rounded-xl mr-6 group-hover:bg-gray-800 transition-colors duration-300">
+                      <Mail className="w-6 h-6 text-white" />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-1">
+                        Email Support
+                      </h3>
+                      <p className="text-sm text-gray-500 flex items-center">
+                        <Hash className="w-4 h-4 mr-1" /> Guaranteed response within 24 hours
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-1">
-                      Email Address
-                    </h3>
-                    <p className="text-gray-600 font-semibold">
-                      info@pushtipack.com
-                    </p>
-                    <p className="text-gray-600 font-semibold">
-                      pushti_pack@yahoo.co.in
-                    </p>
+                  
+                  <div className="ml-0 md:ml-[4.5rem] space-y-3">
+                    {/* General Inquiries */}
+                    <div className="border-l-2 border-gray-200 pl-4 hover:border-gray-900 transition-colors duration-300">
+                      <p className="text-sm font-semibold text-gray-500 mb-1">
+                        General Inquiries & Information
+                      </p>
+                      <a 
+                        href="mailto:info@pushtipack.com"
+                        className="text-gray-900 font-semibold hover:text-gray-700 transition-colors duration-200 block"
+                      >
+                        info@pushtipack.com
+                      </a>
+                      <a 
+                        href="mailto:pushti_pack@yahoo.co.in"
+                        className="text-gray-600 text-sm hover:text-gray-900 transition-colors duration-200 block mt-1"
+                      >
+                        pushti_pack@yahoo.co.in
+                      </a>
+                    </div>
 
-                    <p className="text-sm text-gray-500 mt-1 flex items-center">
-                      <Hash className="w-4 h-4 mr-1" /> Guaranteed response
-                      within 24 hours
-                    </p>
+                    {/* Product Inquiries */}
+                    <div className="border-l-2 border-gray-200 pl-4 hover:border-gray-900 transition-colors duration-300">
+                      <p className="text-sm font-semibold text-gray-500 mb-1">
+                        Product Specifications & Quotes
+                      </p>
+                      <a 
+                        href="mailto:sales@pushtipack.com"
+                        className="text-gray-900 font-semibold hover:text-gray-700 transition-colors duration-200 block"
+                      >
+                        sales@pushtipack.com
+                      </a>
+                    </div>
+
+                    {/* Design Inquiries */}
+                    <div className="border-l-2 border-gray-200 pl-4 hover:border-gray-900 transition-colors duration-300">
+                      <p className="text-sm font-semibold text-gray-500 mb-1">
+                        Design Services & Custom Solutions
+                      </p>
+                      <a 
+                        href="mailto:design@pushtipack.com"
+                        className="text-gray-900 font-semibold hover:text-gray-700 transition-colors duration-200 block"
+                      >
+                        design@pushtipack.com
+                      </a>
+                    </div>
+
+                    {/* Accounting Inquiries */}
+                    <div className="border-l-2 border-gray-200 pl-4 hover:border-gray-900 transition-colors duration-300">
+                      <p className="text-sm font-semibold text-gray-500 mb-1">
+                        Billing, Payments & Account Management
+                      </p>
+                      <a 
+                        href="mailto:accounts@pushtipack.com"
+                        className="text-gray-900 font-semibold hover:text-gray-700 transition-colors duration-200 block"
+                      >
+                        accounts@pushtipack.com
+                      </a>
+                    </div>
                   </div>
                 </div>
 

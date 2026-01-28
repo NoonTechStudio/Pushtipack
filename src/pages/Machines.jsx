@@ -33,6 +33,15 @@ import img9 from '../assets/Images/machines/KOMORI.jpg';
 import img10 from '../assets/Images/machines/KOMORI-Printing.jpg';
 import img11 from '../assets/Images/machines/KOMORI SPRINT-2.jpg';
 
+// New machines data.
+import img12 from '../assets/Images/machines/UEPackaging-1.jpeg';
+import img13 from '../assets/Images/machines/UEPackaging-2.jpeg';
+import img14 from '../assets/Images/machines/PolarCutting-1.jpeg';
+import img15 from '../assets/Images/machines/PolarCutting-2.jpeg';
+import img16 from '../assets/Images/machines/PolarCutting-3.jpeg';
+
+
+
 const Machines = () => {
   const { category } = useParams();
   const location = useLocation();
@@ -51,111 +60,158 @@ const Machines = () => {
 
   // NOTE: Data structure remains the same for consistency
   const packagingMachines = [
-    {
-      id: 1,
-      name: "HEIDELBERG Punching Machine",
-      model: "KSBA-4658",
-      images: [img1, img2],
-      description:
-        "High-precision cylinder die-cutting and punching machine for packaging applications with exceptional register accuracy. Designed for pharmaceutical, cosmetics, and food packaging industries, this machine delivers consistent quality in cutting, creasing, and embossing operations.",
-      specifications: [
-        "Max Sheet Size: 46 x 58.5 cm",
-        "Production Speed: 5,000 sheets/hour",
-        "Punching Force: 40-60 tons",
-        "Min Sheet Size: 14 x 18 cm",
-        "Power Consumption: 5 KW",
-        "Weight: 3,030 kg",
-      ],
-      features: [
-        "Precision Cylinder Die-Cutting Technology",
-        "Suitable for Cutting, Creasing & Embossing",
-        "Robust Steel Frame Construction",
-        "Quick Tool Changeover System",
-        "Central Lubrication System",
-        "Safety Clutch & Emergency Stop",
-      ],
-      industries: ["Pharmaceutical Packaging", "Cosmetics", "Food Packaging"],
-      category: "packaging",
-    },
-    {
-      id: 2,
-      name: "MAXIMA Punching Machine",
-      model: "EXB-35/HS-1020",
-      images: [img3],
-      description:
-        "Advanced flatbed automatic die-cutting machine with PLC control and Siemens automation. Features high-speed operation, accurate feeding, and triple-action stripping system. Ideal for pharmaceutical, food, and cosmetics packaging with excellent versatility for both small and large production runs.",
-      specifications: [
-        "Max Cutting Size: 615 x 895 mm",
-        "Production Speed: 5,500-7,500 sheets/hour",
-        "Punching Accuracy: ±0.1mm",
-        "Power Consumption: 7.5 KW",
-        "Material Thickness: 0.2-5mm",
-        "Dimensions: 3.9m x 3.2m x 1.8m",
-      ],
-      features: [
-        "Siemens PLC Control with Touch Screen HMI",
-        "Triple Action Stripping (Upper, Middle, Bottom)",
-        "Automatic Centralized Lubrication System",
-        "Double Sheet Detector for Quality Control",
-        "Pneumatic Chase Locking System",
-        "Variable Frequency Drive (VFD) Motor Control",
-      ],
-      industries: ["Pharmaceutical", "Food & Beverage", "Cosmetics"],
-      category: "packaging",
-    },
-    {
-      id: 3,
-      name: "Lock Bottom Pasting Machine",
-      model: "LB-1100/AS-900",
-      images: [img4, img5],
-      description:
-        "High-speed automatic folder gluer designed for crash lock bottom and straight-line carton production. Features pre-folding capability and multiple gluing stations for pharmaceutical, cosmetic, and specialty packaging applications. Offers exceptional production efficiency with quick setup times.",
-      specifications: [
-        "Max Sheet Size: 900 x 1,700 mm",
-        "Production Speed: 100-200 m/min",
-        "Min Sheet Size: 300 x 600 mm",
-        "Feed Conveyor Speed: 30 m/min",
-        "Power Consumption: 10.5 KW",
-        "Overall Dimensions: 11.5m x 3m",
-      ],
-      features: [
-        "Pre-Folding for 180° and 135° Creases",
-        "Lock Bottom & Straight-Line Box Capability",
-        "Multiple Gluing Stations (Side & Bottom)",
-        "PLC Program Control with Servo Motors",
-        "Quick Job Changeover (<5 minutes)",
-        "Automatic Counting & Stacking System",
-      ],
-      industries: ["Pharmaceutical", "Cosmetics", "Specialty Packaging"],
-      category: "packaging",
-    },
-    {
-      id: 4,
-      name: "SUKANT Lamination Machine",
-      model: "TFL-1200/SLM-Pro",
-      images: [img6],
-      description:
-        "Professional thermal film lamination system for packaging applications. Designed for laminating printed paper, boards, and flexible materials with precision temperature control. Suitable for enhancing product appearance and providing protective coating for various packaging materials.",
-      specifications: [
-        "Max Lamination Width: 1,200 mm",
-        "Lamination Speed: 0-50 m/min",
-        "Temperature Range: 40-180°C",
-        "Film Thickness: 12-100 microns",
-        "Power Consumption: 15 KW",
-        "Roller Diameter: 150-200 mm",
-      ],
-      features: [
-        "Precision Temperature Control System",
-        "Variable Speed Control with Digital Display",
-        "Suitable for Thermal & Cold Lamination",
-        "Multiple Material Compatibility (Paper/Board/Film)",
-        "Automatic Film Tension Control",
-        "Emergency Stop & Safety Features",
-      ],
-      industries: ["Printing & Packaging", "Labels", "Flexible Packaging"],
-      category: "packaging",
-    },
-  ];
+  {
+    id: 1,
+    name: "HEIDELBERG Punching Machine",
+    model: "KSBA-4658",
+    images: [img1, img2],
+    description:
+      "High-precision cylinder die-cutting and punching machine for packaging applications with exceptional register accuracy. Designed for pharmaceutical, cosmetics, and food packaging industries, this machine delivers consistent quality in cutting, creasing, and embossing operations.",
+    specifications: [
+      "Max Sheet Size: 46 x 58.5 cm",
+      "Production Speed: 5,000 sheets/hour",
+      "Punching Force: 40-60 tons",
+      "Min Sheet Size: 14 x 18 cm",
+      "Power Consumption: 5 KW",
+      "Weight: 3,030 kg",
+    ],
+    features: [
+      "Precision Cylinder Die-Cutting Technology",
+      "Suitable for Cutting, Creasing & Embossing",
+      "Robust Steel Frame Construction",
+      "Quick Tool Changeover System",
+      "Central Lubrication System",
+      "Safety Clutch & Emergency Stop",
+    ],
+    industries: ["Pharmaceutical Packaging", "Cosmetics", "Food Packaging"],
+    category: "packaging",
+  },
+  {
+    id: 2,
+    name: "MAXIMA Punching Machine",
+    model: "EXB-35/HS-1020",
+    images: [img3],
+    description:
+      "Advanced flatbed automatic die-cutting machine with PLC control and Siemens automation. Features high-speed operation, accurate feeding, and triple-action stripping system. Ideal for pharmaceutical, food, and cosmetics packaging with excellent versatility for both small and large production runs.",
+    specifications: [
+      "Max Cutting Size: 615 x 895 mm",
+      "Production Speed: 5,500-7,500 sheets/hour",
+      "Punching Accuracy: ±0.1mm",
+      "Power Consumption: 7.5 KW",
+      "Material Thickness: 0.2-5mm",
+      "Dimensions: 3.9m x 3.2m x 1.8m",
+    ],
+    features: [
+      "Siemens PLC Control with Touch Screen HMI",
+      "Triple Action Stripping (Upper, Middle, Bottom)",
+      "Automatic Centralized Lubrication System",
+      "Double Sheet Detector for Quality Control",
+      "Pneumatic Chase Locking System",
+      "Variable Frequency Drive (VFD) Motor Control",
+    ],
+    industries: ["Pharmaceutical", "Food & Beverage", "Cosmetics"],
+    category: "packaging",
+  },
+  {
+    id: 3,
+    name: "Lock Bottom Pasting Machine",
+    model: "LB-1100/AS-900",
+    images: [img4, img5],
+    description:
+      "High-speed automatic folder gluer designed for crash lock bottom and straight-line carton production. Features pre-folding capability and multiple gluing stations for pharmaceutical, cosmetic, and specialty packaging applications. Offers exceptional production efficiency with quick setup times.",
+    specifications: [
+      "Max Sheet Size: 900 x 1,700 mm",
+      "Production Speed: 100-200 m/min",
+      "Min Sheet Size: 300 x 600 mm",
+      "Feed Conveyor Speed: 30 m/min",
+      "Power Consumption: 10.5 KW",
+      "Overall Dimensions: 11.5m x 3m",
+    ],
+    features: [
+      "Pre-Folding for 180° and 135° Creases",
+      "Lock Bottom & Straight-Line Box Capability",
+      "Multiple Gluing Stations (Side & Bottom)",
+      "PLC Program Control with Servo Motors",
+      "Quick Job Changeover (<5 minutes)",
+      "Automatic Counting & Stacking System",
+    ],
+    industries: ["Pharmaceutical", "Cosmetics", "Specialty Packaging"],
+    category: "packaging",
+  },
+  {
+    id: 4,
+    name: "SUKANT Lamination Machine",
+    model: "TFL-1200/SLM-Pro",
+    images: [img6],
+    description:
+      "Professional thermal film lamination system for packaging applications. Designed for laminating printed paper, boards, and flexible materials with precision temperature control. Suitable for enhancing product appearance and providing protective coating for various packaging materials.",
+    specifications: [
+      "Max Lamination Width: 1,200 mm",
+      "Lamination Speed: 0-50 m/min",
+      "Temperature Range: 40-180°C",
+      "Film Thickness: 12-100 microns",
+      "Power Consumption: 15 KW",
+      "Roller Diameter: 150-200 mm",
+    ],
+    features: [
+      "Precision Temperature Control System",
+      "Variable Speed Control with Digital Display",
+      "Suitable for Thermal & Cold Lamination",
+      "Multiple Material Compatibility (Paper/Board/Film)",
+      "Automatic Film Tension Control",
+      "Emergency Stop & Safety Features",
+    ],
+    industries: ["Printing & Packaging", "Labels", "Flexible Packaging"],
+    category: "packaging",
+  },
+  {
+    id: 5,
+    name: "Heat-Seal Banding Machine",
+    model: "UE-HF450/450J",
+    images: [img12, img13],
+    description:
+      "Portable heat-seal banding machine with Hot Fusion technology for efficient product bundling and packaging. Features plug-and-play operation with optional jumbo attachment for extended operation. Ideal for various industries requiring secure, eco-friendly banding solutions with superior finishing quality.",
+    specifications: [
+      "Arch Size: 206 x 470 mm",
+      "Min Strapping Size: 10 x 30 mm",
+      "Max Strapping Size: 206 x 470 mm",
+      "Strap Width: 20mm / 30mm",
+      "Product Height: 630 mm",
+      "Performance: 20 cycles/min",
+      "Strap Length: 150m (800m with jumbo rollers)",
+      "Weight: 50 kg (UE-HF450), 105 kg (UE-HF450J)",
+      "Power Supply: 220V / 50Hz Single Phase",
+    ],
+    features: [
+      "Hot Fusion Heat-Seal Technology",
+      "Portable & Mobile Design with Brake Rolls",
+      "Plug and Play Installation",
+      "Variable Banding Tension (5-50N adjustable)",
+      "Hand, Foot, or Automatic Trigger Options",
+      "Optional Jumbo Roll Attachment (up to 800m)",
+      "Zero Warm-up Time",
+      "Touch Screen Interface (American Brand)",
+      "MITSUBISHI PLC Control System",
+      "German CISCO Optoelectronics",
+      "Low Maintenance & Energy Saving",
+    ],
+    industries: [
+      "Food & Beverage",
+      "Pharmaceutical",
+      "Publishing & Printing",
+      "E-commerce & Logistics",
+      "General Packaging",
+    ],
+    category: "packaging",
+    materials: [
+      "FTB - Clear Transparent Film",
+      "PB - Brown Paper",
+      "PW - White Paper",
+      "OPP Belts",
+      "Imprinted Materials (up to 8 colors)",
+    ],
+  },
+];
 
   const printingMachines = [
     {
@@ -236,6 +292,52 @@ const Machines = () => {
         ],
         industries: ["Commercial Printing", "Packaging", "Label Printing"],
         category: "printing",
+    },
+    {
+        id: 8,
+        name: "POLAR Paper Cutting Machine",
+        model: "115 EM-Monitor",
+        images: [img14, img15, img16],
+        description:
+            "Professional programmable high-speed paper cutting machine designed for precision cutting operations in commercial printing, packaging, and digital printing environments. Features advanced monitor control system with programmable memory for storing cutting sequences, ensuring exceptional accuracy and efficiency. Ideal for handling a wide range of materials including paper, cardstock, foils, and plastics. The 115 EM-Monitor delivers reliable performance with hydraulic swing cutting, chrome-plated air tables, and comprehensive safety systems. Perfect for both high-volume production runs and intricate custom orders requiring precision and flexibility.",
+        specifications: [
+            "Max Cutting Width: 1,150 mm (45 inches)",
+            "Max Stack Height: 165 mm",
+            "Cutting Size: 115 x 115 cm",
+            "Weight: 3,200 kg",
+            "Power Supply: 380V / 5 KW",
+            "Cutting Method: Hydraulic Swing Cut",
+        ],
+        features: [
+            "EM Monitor with Programmable Computer Control",
+            "Programmable Memory for Storing Cutting Jobs",
+            "Chrome-Plated Central Air Table",
+            "Chrome Side Tables with Air Cushion",
+            "Hydraulic Clamping with Variable Pressure",
+            "Gear Box Driven Knife System",
+            "High-Speed Back Gauge Positioning",
+            "Light Barrier Safety System (IR Photocells)",
+            "Automatic Programming Capability",
+            "Rear Table Guard Protection",
+            "Metric/Imperial Measurement System",
+            "Knife Changing Device Included",
+        ],
+        industries: [
+            "Commercial Printing",
+            "Digital Printing",
+            "Packaging",
+            "Paper Converting",
+            "Publishing",
+            "Bindery & Finishing",
+        ],
+        category: "printing",
+        materials: [
+            "Paper (all grades)",
+            "Cardstock",
+            "Foils",
+            "Plastics",
+            "Laminated Materials",
+        ],
     },
 ];
 
